@@ -1,0 +1,69 @@
+{
+  "calendar": {
+    "content_hash": "c0c90ff14d0709fce0733f20462177c4da222f02456ab544e1ff150107ce452d",
+    "source": "synthetic-explicit-session-sample",
+    "source_version": "v1"
+  },
+  "datasets": [
+    {
+      "content_hash": "14c9535d074f487318993abfedf8b960249e46e3b49de6960e83692812d11b8d",
+      "dataset_name": "securities",
+      "dataset_version": "synthetic-p1-02-v1",
+      "ingested_at": "2026-01-01T04:00:00+00:00",
+      "row_count": 7,
+      "schema_version": "p1-02.v1",
+      "source": [
+        "synthetic"
+      ],
+      "source_version": [
+        "p1-02-fixture-v1"
+      ]
+    },
+    {
+      "content_hash": "e62ddfcc5c5655c73ffca263d72023dd19063de081bdd61f4c110f0705f88c71",
+      "dataset_name": "memberships",
+      "dataset_version": "synthetic-p1-02-v1",
+      "ingested_at": "2026-01-01T04:00:00+00:00",
+      "row_count": 5,
+      "schema_version": "p1-02.v1",
+      "source": [
+        "synthetic"
+      ],
+      "source_version": [
+        "p1-02-fixture-v1"
+      ]
+    },
+    {
+      "content_hash": "8f92e88c5abe69cfe505dedc8339abc6809f42ba3c60d7715ad9548496758479",
+      "dataset_name": "market",
+      "dataset_version": "synthetic-p1-02-v1",
+      "ingested_at": "2026-01-01T04:00:00+00:00",
+      "row_count": 4,
+      "schema_version": "p1-02.v1",
+      "source": [
+        "synthetic"
+      ],
+      "source_version": [
+        "p1-02-fixture-v1"
+      ]
+    },
+    {
+      "content_hash": "8ed9a3a8e85ff46641e9077add4720e26469fd20cf6de9075d0ee0f78b311025",
+      "dataset_name": "fundamentals",
+      "dataset_version": "synthetic-p1-02-v1",
+      "ingested_at": "2026-01-01T04:00:00+00:00",
+      "row_count": 4,
+      "schema_version": "p1-02.v1",
+      "source": [
+        "synthetic"
+      ],
+      "source_version": [
+        "p1-02-fixture-v1"
+      ]
+    }
+  ],
+  "excluded_schema_invalid_rows": 0,
+  "input_content_hash": "2611069bda18b53497bdb3b5279fc767f765f4a8ce4750d1ac37b00fbf70e74d",
+  "schema_version": "p1-02.v1",
+  "validation_status": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+  "ticket": "P1-03",
+  "status": "CONDITIONAL PASS / LOCAL VERIFIED / REMOTE-CI PENDING",
+  "artifact_scope": "synthetic fixture only",
+  "data_source": "synthetic-p1-03-v1",
+  "feature_set_version": "phase1_v1",
+  "registry_hash": "a75b675df537c668aae0a05407bcf8f79d65a2c764266811340ed7c1c31cb66f",
+  "data_manifest_hash": "20e9bb4c0a9e125eb856225b897d777bc6fc8a1309fba59d51c8415c8aa0067f",
+  "rows": 7,
+  "signals": 2,
+  "security_count": 4,
+  "git_commit": null,
+  "remote_ci": "PENDING",
+  "gate_a": "PARTIAL",
+  "research_results": "[TODO: 待实验结果]",
+  "limitations": [
+    "Synthetic records are not 2010–2025 source coverage.",
+    "No labels, alpha, portfolio or performance metrics.",
+    "git commit unavailable because repository has no commits."
+  ],
+  "local_tests_passed": 134,
+  "ruff": "PASS",
+  "mypy": "PASS",
+  "independent_review": "APPROVED; BLOCKER=0; HIGH=0; MEDIUM=2; LOW=1"
+}

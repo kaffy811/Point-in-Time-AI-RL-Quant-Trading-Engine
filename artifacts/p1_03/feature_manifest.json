@@ -1,0 +1,1217 @@
+{
+  "data_manifest_hash": "20e9bb4c0a9e125eb856225b897d777bc6fc8a1309fba59d51c8415c8aa0067f",
+  "diagnostic_warning": "Full-sample statistics in QA reports are diagnostic only and must never be reused as model preprocessing parameters.",
+  "feature_definitions": [
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/P_TR[t-5]-1",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "6 consecutive trading prices",
+      "minimum_observations": 6,
+      "name": "ret_5d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/P_TR[t-20]-1",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "21 consecutive trading prices",
+      "minimum_observations": 21,
+      "name": "ret_20d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/P_TR[t-60]-1",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "61 consecutive trading prices",
+      "minimum_observations": 61,
+      "name": "ret_60d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/P_TR[t-120]-1",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "121 consecutive trading prices",
+      "minimum_observations": 121,
+      "name": "ret_120d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/P_TR[t-252]-1",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "253 consecutive trading prices",
+      "minimum_observations": 253,
+      "name": "ret_252d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t-21]/P_TR[t-252]-1",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "253 consecutive trading prices; skip latest 21 intervals",
+      "minimum_observations": 253,
+      "name": "momentum_12_1",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/max(P_TR[t-251:t])-1 <= 0",
+      "dtype": "float64",
+      "family": "momentum",
+      "lookback": "252 consecutive trading prices",
+      "minimum_observations": 252,
+      "name": "distance_to_52w_high",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "P_TR[t]/P_TR[t-1]-1",
+      "dtype": "float64",
+      "family": "reversal",
+      "lookback": "2 consecutive trading prices",
+      "minimum_observations": 2,
+      "name": "ret_1d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "-ret_5d",
+      "dtype": "float64",
+      "family": "reversal",
+      "lookback": "6 consecutive trading prices",
+      "minimum_observations": 6,
+      "name": "ret_5d_reversal",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "sample_std(20 daily log TR returns, ddof=1)*sqrt(252)",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "20 log returns / 21 consecutive trading prices",
+      "minimum_observations": 21,
+      "name": "realized_vol_20d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "annualized fraction",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "sample_std(60 daily log TR returns, ddof=1)*sqrt(252)",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "60 log returns / 61 consecutive trading prices",
+      "minimum_observations": 61,
+      "name": "realized_vol_60d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "annualized fraction",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "sqrt(252*sum(min(log_TR_return,0)^2)/60)",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "60 log returns / 61 consecutive prices",
+      "minimum_observations": 61,
+      "name": "downside_vol_60d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "annualized fraction",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "sample_cov(stock log TR,SPY log TR)/sample_var(SPY log TR)",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "60 aligned log returns / 61 prices each; zero variance => missing",
+      "minimum_observations": 61,
+      "name": "beta_60d",
+      "required_sources": [
+        "market",
+        "SPY_market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "sample_cov(stock log TR,SPY log TR)/sample_var(SPY log TR)",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "252 aligned log returns / 253 prices each; zero variance => missing",
+      "minimum_observations": 253,
+      "name": "beta_252d",
+      "required_sources": [
+        "market",
+        "SPY_market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "min(P_TR/running_peak(P_TR)-1) <= 0",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "60 consecutive trading prices (not h returns)",
+      "minimum_observations": 60,
+      "name": "max_drawdown_60d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "min(P_TR/running_peak(P_TR)-1) <= 0",
+      "dtype": "float64",
+      "family": "risk",
+      "lookback": "252 consecutive trading prices (not h returns)",
+      "minimum_observations": 252,
+      "name": "max_drawdown_252d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "mean_20(raw_close*raw_volume)",
+      "dtype": "float64",
+      "family": "liquidity",
+      "lookback": "20 consecutive trading observations",
+      "minimum_observations": 20,
+      "name": "adv_usd_20d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "USD/day",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "mean_60(raw_close*raw_volume)",
+      "dtype": "float64",
+      "family": "liquidity",
+      "lookback": "60 consecutive trading observations",
+      "minimum_observations": 60,
+      "name": "adv_usd_60d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "USD/day",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "ln(1+adv_usd_20d)",
+      "dtype": "float64",
+      "family": "liquidity",
+      "lookback": "20 consecutive trading observations",
+      "minimum_observations": 20,
+      "name": "log_dollar_volume_20d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "log(1+USD/day)",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "mean(DV[t-19:t])/mean(DV[t-39:t-20])-1; prior mean must be >0",
+      "dtype": "float64",
+      "family": "liquidity",
+      "lookback": "40 consecutive trading observations",
+      "minimum_observations": 40,
+      "name": "dollar_volume_change_20d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1e6*mean_20(abs(simple_daily_TR_return)/USD_DV); all DV>0",
+      "dtype": "float64",
+      "family": "liquidity",
+      "lookback": "20 returns / 21 consecutive prices",
+      "minimum_observations": 21,
+      "name": "amihud_20d",
+      "required_sources": [
+        "market"
+      ],
+      "unit": "1e6/USD",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM common_net_income/(raw_close*PIT split-adjusted shares)",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "earnings_yield",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "latest common_equity/(raw_close*PIT split-adjusted shares)",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "0 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 0,
+      "name": "book_to_market",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "(TTM operating_cash_flow-TTM positive_capex)/(raw_close*PIT shares)",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "fcf_yield",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM common_net_income/mean(common_equity[t],common_equity[t-4Q]); denominator>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "roe",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM net_income/mean(assets[t],assets[t-4Q]); denominator>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "roa",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM gross_profit/mean(assets[t],assets[t-4Q]); denominator>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "gross_profit_to_assets",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM operating_income/TTM revenue; denominator>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "operating_margin",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM revenue[t]/TTM revenue[t-4Q]-1; prior TTM>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "8 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 8,
+      "name": "revenue_growth",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "TTM diluted_eps[t]/TTM diluted_eps[t-4Q]-1; prior TTM>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "8 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 8,
+      "name": "eps_growth",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "latest total_debt/latest same-period assets; assets>0",
+      "dtype": "float64",
+      "family": "fundamentals",
+      "lookback": "0 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 0,
+      "name": "debt_to_assets",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "ratio",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if earnings_yield is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "earnings_yield_is_missing",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if book_to_market is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "0 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 0,
+      "name": "book_to_market_is_missing",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if fcf_yield is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "fcf_yield_is_missing",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if roe is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "roe_is_missing",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if roa is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "roa_is_missing",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if gross_profit_to_assets is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "gross_profit_to_assets_is_missing",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if operating_margin is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "4 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 4,
+      "name": "operating_margin_is_missing",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if revenue_growth is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "8 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 8,
+      "name": "revenue_growth_is_missing",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if eps_growth is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "8 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 8,
+      "name": "eps_growth_is_missing",
+      "required_sources": [
+        "fundamentals",
+        "market"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    },
+    {
+      "availability_rule": "All consumed observations come from PITStore and are available <= signal; filings too.",
+      "definition": "1 if debt_to_assets is missing else 0",
+      "dtype": "int8",
+      "family": "missingness",
+      "lookback": "0 contiguous discrete fiscal quarters plus exact required instant balances; quarter/YTD/FY normalization uses explicit fiscal metadata and PIT revisions",
+      "minimum_observations": 0,
+      "name": "debt_to_assets_is_missing",
+      "required_sources": [
+        "fundamentals"
+      ],
+      "unit": "indicator",
+      "version": "phase1_v1"
+    }
+  ],
+  "feature_frame_hash": "eb70b149556e94767f8ba44eade5c8afc349660319089676e2130b4147eee250",
+  "feature_set_version": "phase1_v1",
+  "git_commit": null,
+  "inf_count": 0,
+  "quality_statistics": {
+    "adv_usd_20d": {
+      "inf_count": 0,
+      "max": 1890162.451014661,
+      "median": 1794373.6594468313,
+      "min": 1698584.8678790014,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 1698584.8678790014,
+      "p05": 1698584.8678790014,
+      "p95": 1890162.451014661,
+      "p99": 1890162.451014661
+    },
+    "adv_usd_60d": {
+      "inf_count": 0,
+      "max": 1863521.4257399263,
+      "median": 1672531.647866018,
+      "min": 1672531.647866018,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 1672531.647866018,
+      "p05": 1672531.647866018,
+      "p95": 1863521.4257399263,
+      "p99": 1863521.4257399263
+    },
+    "amihud_20d": {
+      "inf_count": 0,
+      "max": 0.0007946327088514492,
+      "median": 0.0005063399225752853,
+      "min": 0.0002180471362991215,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 0.0002180471362991215,
+      "p05": 0.0002180471362991215,
+      "p95": 0.0007946327088514492,
+      "p99": 0.0007946327088514492
+    },
+    "beta_252d": {
+      "inf_count": 0,
+      "max": 2.0000000000000657,
+      "median": 1.999999999999983,
+      "min": 1.999999999999983,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 1.999999999999983,
+      "p05": 1.999999999999983,
+      "p95": 2.0000000000000657,
+      "p99": 2.0000000000000657
+    },
+    "beta_60d": {
+      "inf_count": 0,
+      "max": 2.000000000000119,
+      "median": 2.000000000000119,
+      "min": 1.999999999999976,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 1.999999999999976,
+      "p05": 1.999999999999976,
+      "p95": 2.000000000000119,
+      "p99": 2.000000000000119
+    },
+    "book_to_market": {
+      "inf_count": 0,
+      "max": 0.036843584752236966,
+      "median": 0.03481830836543423,
+      "min": 0.03481830836543423,
+      "missing_count": 2,
+      "missing_reasons": {
+        "missing_or_ambiguous_instant_fact": 2
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.03481830836543423,
+      "p05": 0.03481830836543423,
+      "p95": 0.036843584752236966,
+      "p99": 0.036843584752236966
+    },
+    "book_to_market_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 0.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "debt_to_assets": {
+      "inf_count": 0,
+      "max": 0.18181818181818182,
+      "median": 0.18181818181818182,
+      "min": 0.16666666666666666,
+      "missing_count": 2,
+      "missing_reasons": {
+        "missing_or_ambiguous_instant_fact": 2
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.16666666666666666,
+      "p05": 0.16666666666666666,
+      "p95": 0.18181818181818182,
+      "p99": 0.18181818181818182
+    },
+    "debt_to_assets_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 0.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "distance_to_52w_high": {
+      "inf_count": 0,
+      "max": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "dollar_volume_change_20d": {
+      "inf_count": 0,
+      "max": 0.013217284324873901,
+      "median": 0.013217284324873901,
+      "min": 0.012544622828615903,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.012544622828615903,
+      "p05": 0.012544622828615903,
+      "p95": 0.013217284324873901,
+      "p99": 0.013217284324873901
+    },
+    "downside_vol_60d": {
+      "inf_count": 0,
+      "max": 0.0012909473777834562,
+      "median": 0.0009143766067039032,
+      "min": 0.0009143766067039032,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.0009143766067039032,
+      "p05": 0.0009143766067039032,
+      "p95": 0.0012909473777834562,
+      "p99": 0.0012909473777834562
+    },
+    "earnings_yield": {
+      "inf_count": 0,
+      "max": 0.00473703232528761,
+      "median": 0.0038300139201977654,
+      "min": 0.0038300139201977654,
+      "missing_count": 2,
+      "missing_reasons": {
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.0038300139201977654,
+      "p05": 0.0038300139201977654,
+      "p95": 0.004694925371285053,
+      "p99": 0.004728610934487098
+    },
+    "earnings_yield_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 0.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "eps_growth": {
+      "inf_count": 0,
+      "max": 0.8,
+      "median": 0.8,
+      "min": 0.8,
+      "missing_count": 5,
+      "missing_reasons": {
+        "incomplete_ttm_quarters": 3,
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 28.571428571428573,
+      "p01": 0.8,
+      "p05": 0.8,
+      "p95": 0.8,
+      "p99": 0.8
+    },
+    "eps_growth_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 1.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "fcf_yield": {
+      "inf_count": 0,
+      "max": 0.006383356533662943,
+      "median": 0.006383356533662943,
+      "min": 0.00631604310038348,
+      "missing_count": 2,
+      "missing_reasons": {
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.00631604310038348,
+      "p05": 0.00631604310038348,
+      "p95": 0.006383356533662943,
+      "p99": 0.006383356533662943
+    },
+    "fcf_yield_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 0.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "gross_profit_to_assets": {
+      "inf_count": 0,
+      "max": 0.21391304347826087,
+      "median": 0.21391304347826087,
+      "min": 0.21391304347826087,
+      "missing_count": 5,
+      "missing_reasons": {
+        "missing_or_ambiguous_instant_fact": 3,
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 28.571428571428573,
+      "p01": 0.21391304347826087,
+      "p05": 0.21391304347826087,
+      "p95": 0.21391304347826087,
+      "p99": 0.21391304347826087
+    },
+    "gross_profit_to_assets_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 1.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "log_dollar_volume_20d": {
+      "inf_count": 0,
+      "max": 14.45217386531481,
+      "median": 14.39874024287212,
+      "min": 14.345306620429431,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 14.345306620429431,
+      "p05": 14.345306620429431,
+      "p95": 14.45217386531481,
+      "p99": 14.45217386531481
+    },
+    "max_drawdown_252d": {
+      "inf_count": 0,
+      "max": -0.001143257006142484,
+      "median": -0.0011448603077789388,
+      "min": -0.0011448603077789388,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": -0.0011448603077789388,
+      "p05": -0.0011448603077789388,
+      "p95": -0.001143257006142484,
+      "p99": -0.001143257006142484
+    },
+    "max_drawdown_60d": {
+      "inf_count": 0,
+      "max": -0.001133587178564044,
+      "median": -0.001140438404012567,
+      "min": -0.001140438404012567,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": -0.001140438404012567,
+      "p05": -0.001140438404012567,
+      "p95": -0.001133587178564044,
+      "p99": -0.001133587178564044
+    },
+    "momentum_12_1": {
+      "inf_count": 0,
+      "max": 0.20799949939881524,
+      "median": 0.1928623111011476,
+      "min": 0.1928623111011476,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.1928623111011476,
+      "p05": 0.1928623111011476,
+      "p95": 0.20799949939881524,
+      "p99": 0.20799949939881524
+    },
+    "operating_margin": {
+      "inf_count": 0,
+      "max": 0.17491749174917492,
+      "median": 0.17491749174917492,
+      "min": 0.15632754342431762,
+      "missing_count": 2,
+      "missing_reasons": {
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.15632754342431762,
+      "p05": 0.15632754342431762,
+      "p95": 0.17491749174917492,
+      "p99": 0.17491749174917492
+    },
+    "operating_margin_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 0.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "realized_vol_20d": {
+      "inf_count": 0,
+      "max": 0.00817996449417291,
+      "median": 0.007615504608888222,
+      "min": 0.007051044723603534,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 0.007051044723603534,
+      "p05": 0.007051044723603534,
+      "p95": 0.00817996449417291,
+      "p99": 0.00817996449417291
+    },
+    "realized_vol_60d": {
+      "inf_count": 0,
+      "max": 0.011174044162685403,
+      "median": 0.011174044162685403,
+      "min": 0.010844783316079208,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.010844783316079208,
+      "p05": 0.010844783316079208,
+      "p95": 0.011174044162685403,
+      "p99": 0.011174044162685403
+    },
+    "ret_120d": {
+      "inf_count": 0,
+      "max": 0.10872918722117464,
+      "median": 0.10872918722117464,
+      "min": 0.10007116147971207,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.10007116147971207,
+      "p05": 0.10007116147971207,
+      "p95": 0.10872918722117464,
+      "p99": 0.10872918722117464
+    },
+    "ret_1d": {
+      "inf_count": 0,
+      "max": 0.0013893521614543047,
+      "median": 0.001266379528335304,
+      "min": 0.0011434068952163035,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 0.0011434068952163035,
+      "p05": 0.0011434068952163035,
+      "p95": 0.0013893521614543047,
+      "p99": 0.0013893521614543047
+    },
+    "ret_20d": {
+      "inf_count": 0,
+      "max": 0.027386719670976056,
+      "median": 0.016697922804572718,
+      "min": 0.0060091259381693796,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 0.0060091259381693796,
+      "p05": 0.0060091259381693796,
+      "p95": 0.027386719670976056,
+      "p99": 0.027386719670976056
+    },
+    "ret_252d": {
+      "inf_count": 0,
+      "max": 0.22580478997968378,
+      "median": 0.22580478997968378,
+      "min": 0.21579782216867915,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.21579782216867915,
+      "p05": 0.21579782216867915,
+      "p95": 0.22580478997968378,
+      "p99": 0.22580478997968378
+    },
+    "ret_5d": {
+      "inf_count": 0,
+      "max": 0.007148637512372158,
+      "median": 0.006254978881539364,
+      "min": 0.005361320250706569,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": 0.005361320250706569,
+      "p05": 0.005361320250706569,
+      "p95": 0.007148637512372158,
+      "p99": 0.007148637512372158
+    },
+    "ret_5d_reversal": {
+      "inf_count": 0,
+      "max": -0.005361320250706569,
+      "median": -0.006254978881539364,
+      "min": -0.007148637512372158,
+      "missing_count": 1,
+      "missing_reasons": {
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 85.71428571428571,
+      "p01": -0.007148637512372158,
+      "p05": -0.007148637512372158,
+      "p95": -0.005361320250706569,
+      "p99": -0.005361320250706569
+    },
+    "ret_60d": {
+      "inf_count": 0,
+      "max": 0.058521216490624584,
+      "median": 0.058521216490624584,
+      "min": 0.038139712604756015,
+      "missing_count": 2,
+      "missing_reasons": {
+        "insufficient_or_gapped_market_history": 1,
+        "no_available_market_bar": 1
+      },
+      "non_null_pct": 71.42857142857143,
+      "p01": 0.038139712604756015,
+      "p05": 0.038139712604756015,
+      "p95": 0.058521216490624584,
+      "p99": 0.058521216490624584
+    },
+    "revenue_growth": {
+      "inf_count": 0,
+      "max": 0.9852216748768472,
+      "median": 0.9852216748768472,
+      "min": 0.9852216748768472,
+      "missing_count": 5,
+      "missing_reasons": {
+        "incomplete_ttm_quarters": 3,
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 28.571428571428573,
+      "p01": 0.9852216748768472,
+      "p05": 0.9852216748768472,
+      "p95": 0.9852216748768472,
+      "p99": 0.9852216748768472
+    },
+    "revenue_growth_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 1.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "roa": {
+      "inf_count": 0,
+      "max": 0.0817391304347826,
+      "median": 0.0817391304347826,
+      "min": 0.0817391304347826,
+      "missing_count": 5,
+      "missing_reasons": {
+        "missing_or_ambiguous_instant_fact": 3,
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 28.571428571428573,
+      "p01": 0.0817391304347826,
+      "p05": 0.0817391304347826,
+      "p95": 0.0817391304347826,
+      "p99": 0.0817391304347826
+    },
+    "roa_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 1.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    },
+    "roe": {
+      "inf_count": 0,
+      "max": 0.13846153846153847,
+      "median": 0.13538461538461538,
+      "min": 0.13230769230769232,
+      "missing_count": 5,
+      "missing_reasons": {
+        "missing_or_ambiguous_instant_fact": 3,
+        "no_visible_fundamental_fact": 2
+      },
+      "non_null_pct": 28.571428571428573,
+      "p01": 0.1323692307692308,
+      "p05": 0.13261538461538463,
+      "p95": 0.13815384615384615,
+      "p99": 0.1384
+    },
+    "roe_is_missing": {
+      "inf_count": 0,
+      "max": 1.0,
+      "median": 1.0,
+      "min": 0.0,
+      "missing_count": 0,
+      "missing_reasons": {},
+      "non_null_pct": 100.0,
+      "p01": 0.0,
+      "p05": 0.0,
+      "p95": 1.0,
+      "p99": 1.0
+    }
+  },
+  "registry_hash": "a75b675df537c668aae0a05407bcf8f79d65a2c764266811340ed7c1c31cb66f",
+  "row_count": 7,
+  "security_count": 4,
+  "signal_timestamp_end": "2025-02-07T21:10:00+00:00",
+  "signal_timestamp_start": "2024-08-02T20:10:00+00:00",
+  "timestamp_violations": 0,
+  "working_tree_dirty": true,
+  "working_tree_hash": "2342aa4fd9ae9969dff3d7dc42ba0f9922817fd4ad149eee554b006effb4b7e9"
+}

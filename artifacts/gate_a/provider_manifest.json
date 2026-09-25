@@ -1,0 +1,15 @@
+{
+  "status": "BLOCKED",
+  "native_parquet": {
+    "package": "pyarrow",
+    "version": "18.1.0",
+    "verified": true
+  },
+  "approved_preferred_stack": "CRSP + WRDS historical membership/linking + SEC EDGAR accession archive",
+  "approved_fallback_stack": "Norgate Platinum + SEC EDGAR accession archive",
+  "available_provider_code": ["SECCompanyFactsAdapter"],
+  "provider_limitation": "Archived one-accession SEC adapter cannot establish historical filing availability or revision completeness for 2010-2025.",
+  "approved_real_source_combination": true,
+  "access_probe_status": "NOT RUN",
+  "retrieval_timestamp": null
+}

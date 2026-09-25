@@ -1,0 +1,72 @@
+{
+  "data_manifest_hash": "26729973c7c962f61391b3f1fa25b88ae3f9149b6c94e33670209fc77692b45c",
+  "is_forward_looking": true,
+  "label_version": "phase1_label_v1",
+  "rows": [
+    {
+      "benchmark_total_return": 0.0016837023612705782,
+      "data_manifest_hash": "26729973c7c962f61391b3f1fa25b88ae3f9149b6c94e33670209fc77692b45c",
+      "entry_execution_timestamp": "2024-08-05 13:30:00+00:00",
+      "exit_execution_timestamp": "2024-08-12 13:30:00+00:00",
+      "holding_session_count": 5,
+      "invalid_reason": null,
+      "label_end_timestamp": "2024-08-12 13:30:00+00:00",
+      "label_valid": true,
+      "label_version": "phase1_label_v1",
+      "schedule_version": "calendar_weekly_next_open_v1",
+      "security_id": "SEC_ALPHA",
+      "security_total_return": 0.00236737085453953,
+      "signal_timestamp": "2024-08-02 20:10:00+00:00",
+      "target_excess_return": 0.0006836684932689518
+    },
+    {
+      "benchmark_total_return": 0.0016837023612705782,
+      "data_manifest_hash": "26729973c7c962f61391b3f1fa25b88ae3f9149b6c94e33670209fc77692b45c",
+      "entry_execution_timestamp": "2024-08-05 13:30:00+00:00",
+      "exit_execution_timestamp": "2024-08-12 13:30:00+00:00",
+      "holding_session_count": 5,
+      "invalid_reason": null,
+      "label_end_timestamp": "2024-08-12 13:30:00+00:00",
+      "label_valid": true,
+      "label_version": "phase1_label_v1",
+      "schedule_version": "calendar_weekly_next_open_v1",
+      "security_id": "SEC_ENTRY",
+      "security_total_return": 0.00236737085453953,
+      "signal_timestamp": "2024-08-02 20:10:00+00:00",
+      "target_excess_return": 0.0006836684932689518
+    },
+    {
+      "benchmark_total_return": 0.0016837023612705782,
+      "data_manifest_hash": "26729973c7c962f61391b3f1fa25b88ae3f9149b6c94e33670209fc77692b45c",
+      "entry_execution_timestamp": "2024-08-05 13:30:00+00:00",
+      "exit_execution_timestamp": "2024-08-12 13:30:00+00:00",
+      "holding_session_count": 5,
+      "invalid_reason": null,
+      "label_end_timestamp": "2024-08-12 13:30:00+00:00",
+      "label_valid": true,
+      "label_version": "phase1_label_v1",
+      "schedule_version": "calendar_weekly_next_open_v1",
+      "security_id": "SEC_EXIT",
+      "security_total_return": 0.00236737085453953,
+      "signal_timestamp": "2024-08-02 20:10:00+00:00",
+      "target_excess_return": 0.0006836684932689518
+    },
+    {
+      "benchmark_total_return": null,
+      "data_manifest_hash": "26729973c7c962f61391b3f1fa25b88ae3f9149b6c94e33670209fc77692b45c",
+      "entry_execution_timestamp": "2024-08-05 13:30:00+00:00",
+      "exit_execution_timestamp": "2024-08-12 13:30:00+00:00",
+      "holding_session_count": null,
+      "invalid_reason": "INCOMPLETE_MARKET_COVERAGE",
+      "label_end_timestamp": "2024-08-12 13:30:00+00:00",
+      "label_valid": false,
+      "label_version": "phase1_label_v1",
+      "schedule_version": "calendar_weekly_next_open_v1",
+      "security_id": "SEC_SHORT",
+      "security_total_return": null,
+      "signal_timestamp": "2024-08-02 20:10:00+00:00",
+      "target_excess_return": null
+    }
+  ],
+  "schedule_version": "calendar_weekly_next_open_v1"
+}

@@ -1,0 +1,33 @@
+name: research-integrity
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.8.15"
+      - run: uv python install 3.11
+      - run: uv sync --frozen --extra wrds --python 3.11
+      - run: uv run --frozen --extra wrds ruff check .
+      - run: uv run --frozen --extra wrds mypy src
+      - run: uv run --frozen --extra wrds pytest
+      - run: uv run --frozen --extra wrds quant-engine --config configs/phase1_baseline.yaml
+      - name: Generate synthetic PIT data-quality evidence
+        run: >-
+          uv run --frozen --extra wrds python -m src.data.cli
+          --input tests/fixtures/p1_02/canonical.json
+          --calendar tests/fixtures/p1_02/calendar.json
+          --config configs/phase1_baseline.yaml
+          --dataset-version synthetic-p1-02-v1
+          --as-of 2024-08-02T16:10:00-04:00
+          --ingested-at 2026-01-01T04:00:00+00:00
+          --output artifacts/p1_02
+      - name: Upload data-contract evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-02-data-quality-${{ github.sha }}
+          path: artifacts/p1_02/
+          if-no-files-found: error

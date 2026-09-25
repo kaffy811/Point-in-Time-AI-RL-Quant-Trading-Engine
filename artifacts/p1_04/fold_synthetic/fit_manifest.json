@@ -1,0 +1,14 @@
+{
+  "config_hash": "25ddfb7d775a412ab3f9780c3bd7ae92d00f6187535e2eb83dfcfa661a095d07",
+  "feature_selection": "disabled",
+  "feature_set_version": "phase1_v1",
+  "fit_row_count": 7,
+  "fit_row_ids_hash": "1a1af46bc4a41428179d7203b7292b16e9c7957b39697195de92ab91daa54239",
+  "fit_security_count": 4,
+  "fit_split": "TRAIN",
+  "fold_id": "fold_synthetic",
+  "git_commit": null,
+  "input_manifest_hash": "6d188ef2742f3587084070f53c8853e9c0e7831b46dc9bab96b86b032d448247",
+  "registry_hash": "2b9242770c95cbf9542ba64406c2088e6d7e3fe9c131df72a310fcccf23dff46",
+  "scaler": "disabled"
+}

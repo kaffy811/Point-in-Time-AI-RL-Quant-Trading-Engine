@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+artifacts/phase1/*
+!artifacts/phase1/.gitkeep
+
+# Licensed provider snapshots and local credentials must never enter Git.
+data/raw/wrds/
+artifacts/gate_a/identity_spine/*.parquet
+.pgpass
+.pgpass.*
+pgpass.conf
+.env
+.env.*
+
+# Local licensed datasets and generated columnar outputs are never baseline inputs.
+data/raw/
+data/canonical/
+*.parquet
+*.arrow
+*.feather
+*.pem
+*.key
+# Reproducible generated review patch, not source.
+artifacts/**/*.patch

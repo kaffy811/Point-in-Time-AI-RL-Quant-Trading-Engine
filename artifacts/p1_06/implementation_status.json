@@ -1,0 +1,22 @@
+{
+  "ticket": "P1-06",
+  "status": "CONDITIONAL PASS / LOCAL VERIFIED / REMOTE-CI PENDING",
+  "independent_review": "APPROVE; BLOCKER=0; HIGH=0; MEDIUM=0; LOW=0",
+  "artifact_scope": "synthetic fixture only",
+  "folds": [
+    "fold_2017"
+  ],
+  "feature_manifest_hash": "m",
+  "label_manifest_hash": "c588840c4d324b03641b12dbadc54ca0f025b68bfe2708242ade4ee33ef84f0b",
+  "git_commit": null,
+  "working_tree_hash": "cef15eb1bf4bbb92b5db891cedd57cbfdfe5f9f337f0e1c882c36b2f79ed3428",
+  "remote_ci": "PENDING",
+  "gate_a": "PARTIAL",
+  "research_results": "[TODO: \u5f85\u5b9e\u9a8c\u7ed3\u679c]",
+  "limitations": [
+    "Synthetic records are not 2010\u20132025 source coverage.",
+    "No model, IC/RankIC, portfolio or performance metrics.",
+    "Parquet artifacts are native pyarrow files; real-data provenance remains pending.",
+    "git commit unavailable because repository has no commits."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "status": "NOT FROZEN",
+  "reason": "No approved real historical provider combination is available; cohort freeze is blocked under RDR-014-GATE-A.",
+  "security_count": 0,
+  "selection_basis": "Not run; no performance-based selection permitted."
+}

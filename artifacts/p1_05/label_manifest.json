@@ -1,0 +1,13 @@
+{
+  "config_hash": "25ddfb7d775a412ab3f9780c3bd7ae92d00f6187535e2eb83dfcfa661a095d07",
+  "data_manifest_hash": "26729973c7c962f61391b3f1fa25b88ae3f9149b6c94e33670209fc77692b45c",
+  "git_commit": null,
+  "invalid_row_count": 1,
+  "is_forward_looking": true,
+  "label_frame_hash": "197747cbb784ec8bd6ccaf96b32de6dcfad987add848e623e7fd1feee6f62f19",
+  "label_version": "phase1_label_v1",
+  "row_count": 4,
+  "schedule_version": "calendar_weekly_next_open_v1",
+  "valid_row_count": 3,
+  "working_tree_hash": "b5c6d06a4518c1159ca49e49e2e5ef7b38c71e64c21f0dfcaac88ef5f16b1efa"
+}

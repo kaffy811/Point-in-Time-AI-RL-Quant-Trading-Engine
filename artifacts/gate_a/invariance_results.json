@@ -1,0 +1,6 @@
+{
+  "status": "NOT RUN",
+  "reason": "No real cohort or provider data were admitted to Gate A.",
+  "future_year_invariance": null,
+  "holdout_2026_invariance": null
+}

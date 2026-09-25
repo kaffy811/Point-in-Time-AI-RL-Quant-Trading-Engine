@@ -1,0 +1,53 @@
+universe:
+  name: sp500_pit
+research:
+  start: 2010-01-01
+  end: 2025-12-31
+  reserved_year: 2026
+signal:
+  frequency: weekly
+  timestamp: post_close
+  formation_time: "16:10"
+  timezone: America/New_York
+market_data:
+  completed_bar_delay_minutes: 5
+preprocessing:
+  winsorization:
+    enabled: true
+    lower_quantile: 0.01
+    upper_quantile: 0.99
+    interpolation: linear
+  imputation:
+    method: median
+  scaling:
+    enabled: false
+  feature_selection:
+    enabled: false
+execution:
+  timing: next_open
+label:
+  horizon_trading_days: 5
+  benchmark: SPY
+selection:
+  top_k: 25
+validation:
+  scheme: expanding_walk_forward
+  purge_days: 5
+  embargo_days: 5
+cost:
+  base_bps: 10
+  sensitivity_bps: [5, 10, 20]
+portfolio:
+  long_only: true
+  max_position: 0.10
+  max_sector: 0.30
+model:
+  type: lightgbm_regressor
+  objective: regression
+  learning_rate: 0.03
+  num_leaves: 31
+  min_child_samples: 50
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  lambda_l2: 1.0
+seed: 42

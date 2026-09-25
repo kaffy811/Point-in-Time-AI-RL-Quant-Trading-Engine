@@ -1,0 +1,22 @@
+{
+  "future_interval": "[entry_execution_timestamp, label_end_timestamp]",
+  "holding_session_count": "elapsed trading-session intervals; endpoint count minus one",
+  "no_imputation": true,
+  "required_columns": [
+    "security_id",
+    "signal_timestamp",
+    "entry_execution_timestamp",
+    "exit_execution_timestamp",
+    "label_end_timestamp",
+    "holding_session_count",
+    "security_total_return",
+    "benchmark_total_return",
+    "target_excess_return",
+    "label_valid",
+    "invalid_reason",
+    "label_version",
+    "data_manifest_hash",
+    "schedule_version"
+  ],
+  "target_definition": "security_total_return - benchmark_total_return"
+}

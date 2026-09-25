@@ -1,0 +1,37 @@
+{
+  "ticket": "GATE-A-INFRA-01",
+  "verification_date": "2026-09-25",
+  "live_wrds_access_performed": false,
+  "checks": [
+    {
+      "command": ".venv/bin/pytest -q",
+      "result": "189 passed in 10.01s"
+    },
+    {
+      "command": ".venv/bin/ruff check .",
+      "result": "PASS"
+    },
+    {
+      "command": ".venv/bin/mypy src",
+      "result": "PASS: 56 source files"
+    }
+  ],
+  "reviewed_file_hashes": {
+    "src/data/providers/wrds/__init__.py": "abc8f67c3b0ae0ff429a72ff7e99756b246877ff446f67a36c7c0e088db0abe3",
+    "src/data/providers/wrds/cli.py": "e5ea4fbd4ba58b4edc3dbde7cb53dadfc782e7c9395ac68fc9dd27a89127b8de",
+    "src/data/providers/wrds/connection.py": "8c8d71fd318f272477aac3380bcf5d58aaada58d44709f0be09e170f162bb196",
+    "src/data/providers/wrds/extract.py": "cf8d2f4156216bae559f8e73ef4f11012ecd76a53ccd8b42c186c9da03241dfe",
+    "src/data/providers/wrds/native.py": "d8f13d63105b78d05270d3df5a204e80ab215bb7872a37ad5d6e9c47301a7e45",
+    "src/data/providers/wrds/query.py": "94540568ce7d580a9234547a49d41396ef6cbc7b350704a62d0d3e38ebde6066",
+    "src/data/providers/wrds/sql/sample.sql": "d14358face3e3e71519b4af544dd013d67c784cd5da8bdd739a36917567360e7",
+    "tests/unit/data/wrds/test_connector.py": "fdee61c45e6ab82284daf7d14be260f2376ee6611014c4a5f5a6321a8be3ca23",
+    "tests/unit/data/wrds/test_native.py": "f34ec7c230b9f2f4a99190307322c1724c0dff26aaf1a3bad2af6d46d7da61b9",
+    "pyproject.toml": "e32a5fa20e5ec194cd2e056fae77b7fdbaa1430490f6062aa778c8158e2dea94",
+    "uv.lock": "f0b46730c6feaa42e3de2780257ea6d8f1680de2c99453057e8da1ccbb9e729e",
+    ".gitignore": "ef265d88f3e340a9fc5edb97d89c3a8382abc203ea7289ddd01d948cec684ba8",
+    ".github/workflows/ci.yml": "d8847204c73ec98f2a5c1fe0168c03380cac598b718a994a766ede806d59b79b"
+  },
+  "hash_algorithm": "sha256",
+  "repository_baseline": "unborn; no committed baseline",
+  "note": "Snapshot hashes identify review scope; not a Git baseline or research approval."
+}

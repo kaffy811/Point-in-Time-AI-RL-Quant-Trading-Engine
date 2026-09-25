@@ -1,0 +1,21 @@
+{
+  "ticket": "P1-04",
+  "status": "CONDITIONAL PASS / LOCAL VERIFIED / REMOTE-CI PENDING",
+  "independent_review": "APPROVE; BLOCKER=0; HIGH=0; MEDIUM=0; LOW=0",
+  "artifact_scope": "synthetic fixture only",
+  "data_source": "synthetic-p1-04-v1",
+  "feature_set_version": "phase1_v1",
+  "registry_hash": "2b9242770c95cbf9542ba64406c2088e6d7e3fe9c131df72a310fcccf23dff46",
+  "data_manifest_hash": "6d188ef2742f3587084070f53c8853e9c0e7831b46dc9bab96b86b032d448247",
+  "train_rows": 7,
+  "test_rows": 3,
+  "git_commit": null,
+  "remote_ci": "PENDING",
+  "gate_a": "PARTIAL",
+  "research_results": "[TODO: \u5f85\u5b9e\u9a8c\u7ed3\u679c]",
+  "limitations": [
+    "Synthetic records are not 2010\u20132025 source coverage.",
+    "No labels, alpha, portfolio or performance metrics.",
+    "git commit unavailable because repository has no commits."
+  ]
+}

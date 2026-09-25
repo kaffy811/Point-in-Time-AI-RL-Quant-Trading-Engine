@@ -1,0 +1,5 @@
+{
+  "rule": "label_end_timestamp < downstream_effective_start",
+  "train_purged_count": 0,
+  "validation_purged_count": 0
+}

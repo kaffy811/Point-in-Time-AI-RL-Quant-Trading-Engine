@@ -1,0 +1,17 @@
+{
+  "gate": "A",
+  "status": "BLOCKED",
+  "decision": "DO NOT PASS GATE A",
+  "blockers": [
+    "Historical identity spine and SEC accession-level canonical/revision-complete pipeline remain unimplemented; subsequent Gate A audits remain required."
+  ],
+  "model_training": false,
+  "performance_research": false,
+  "research_results": "[TODO: \u5f85\u5b9e\u9a8c\u7ed3\u679c]",
+  "rdr": "RDR-014-GATE-A",
+  "decision_date": "2026-09-25",
+  "authority": "Research Owner gate sequencing instruction",
+  "data_01_status": "PASS",
+  "historical_decision": "infra_01/gate_a_decision_before_owner_update.json",
+  "infra_01_status": "CONDITIONAL PASS / LOCAL VERIFIED"
+}

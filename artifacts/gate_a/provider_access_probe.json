@@ -1,0 +1,89 @@
+{
+  "ticket": "GATE-A-DATA-01",
+  "status": "PARTIAL / BLOCKED",
+  "probe_timestamp": "2026-09-23T05:41:18Z",
+  "probe_scope": "minimal access probes only; no bulk ingestion or cohort selection",
+  "preferred": [
+    {
+      "provider": "CRSP",
+      "dataset": "CRSP US Stock",
+      "capability": "stable PERMNO/PERMCO, executable open, OHLCV, corporate actions, delisting",
+      "access_status": "FAIL",
+      "contract_status": "UNVERIFIED",
+      "table_or_endpoint": null,
+      "required_fields": ["PERMNO", "PERMCO", "date", "open", "high", "low", "close", "volume", "return", "return_ex_distribution", "price_adjustment_factor", "distribution", "delisting"],
+      "observed_fields": [],
+      "sample_period": null,
+      "sample_row_count": 0,
+      "entitlement": "No CRSP/WRDS credential or licensed table access is present in the current environment.",
+      "limitations": ["Provider documentation is not treated as access evidence."],
+      "evidence": "Environment entitlement probe found no CRSP/WRDS access variables or local licensed extracts."
+    },
+    {
+      "provider": "CRSP via WRDS",
+      "dataset": "historical S&P 500 constituents",
+      "capability": "historical membership with PERMNO and effective intervals",
+      "access_status": "FAIL",
+      "contract_status": "UNVERIFIED",
+      "table_or_endpoint": null,
+      "required_fields": ["PERMNO", "index_id", "membership date/interval"],
+      "observed_fields": [],
+      "sample_period": null,
+      "sample_row_count": 0,
+      "entitlement": "No WRDS session or licensed membership extract is available.",
+      "limitations": ["Current constituents and Wikipedia history were not substituted."],
+      "evidence": "No historical membership query was executed because no entitlement exists."
+    },
+    {
+      "provider": "WRDS",
+      "dataset": "historical CRSP-to-SEC linking",
+      "capability": "effective-dated PERMNO/CUSIP/GVKEY/CIK link",
+      "access_status": "FAIL",
+      "contract_status": "UNVERIFIED",
+      "table_or_endpoint": null,
+      "required_fields": ["PERMNO", "CIK", "effective_from", "effective_to"],
+      "observed_fields": [],
+      "sample_period": null,
+      "sample_row_count": 0,
+      "entitlement": "No WRDS access is available.",
+      "limitations": ["Current ticker-to-CIK mapping was not used."],
+      "evidence": "No linking table query was executed."
+    },
+    {
+      "provider": "SEC EDGAR",
+      "dataset": "submissions and filing archive",
+      "capability": "accession-level historical filing retrieval and acceptance timestamps",
+      "access_status": "PASS",
+      "contract_status": "PARTIAL",
+      "table_or_endpoint": "data.sec.gov/submissions; www.sec.gov/Archives/edgar/data",
+      "required_fields": ["CIK", "accession_number", "form_type", "filing_date", "acceptance_datetime", "period_of_report", "filing documents/XBRL"],
+      "observed_fields": ["cik", "accessionNumber", "form", "filingDate", "acceptanceDateTime", "reportDate", "primaryDocument", "isXBRL"],
+      "sample_period": ["2010", "2015", "2020", "2025"],
+      "sample_row_count": 4,
+      "entitlement": "Public programmatic access succeeded with a descriptive User-Agent.",
+      "limitations": ["Accession-level canonical adapter and historical revision completeness are not yet implemented.", "SEC post-acceptance correction history remains a documented limitation."],
+      "evidence": ["CIK0000320193 submissions JSON returned Apple records for 2020 and 2025.", "CIK0000320193-submissions-001.json returned 2010 and 2015 records.", "SEC archive index JSON returned XBRL documents for accession 0001193125-10-012091 (10-K/A, 2010-01-25)."]
+    }
+  ],
+  "fallback": [
+    {
+      "provider": "Norgate Platinum",
+      "dataset": "US Stocks / historical index constituents",
+      "capability": "historical membership, OHLCV, delisted securities and adjustment indicators",
+      "access_status": "FAIL",
+      "contract_status": "UNVERIFIED",
+      "table_or_endpoint": null,
+      "required_fields": ["historical membership", "raw OHLCV", "split/dividend/capital event indicators", "stable identifier"],
+      "observed_fields": [],
+      "sample_period": null,
+      "sample_row_count": 0,
+      "entitlement": "No Norgate subscription, API credential or local export is available.",
+      "unsupported_event_classes": ["UNRESOLVED UNTIL ACCESSIBLE"],
+      "limitations": ["No provider feature claim was treated as environment access evidence."],
+      "evidence": "No Norgate access probe could be executed in the current environment."
+    }
+  ],
+  "recommended_next_state": "GATE-A-DATA-01 BLOCKED; obtain CRSP/WRDS entitlement or activate and audit the documented Norgate fallback. Gate A remains BLOCKED.",
+  "model_training": false,
+  "performance_research": false
+}

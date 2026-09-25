@@ -1,0 +1,19 @@
+{
+  "test_candidate_count": 3,
+  "test_embargo_excluded_count": 0,
+  "test_final_count": 3,
+  "test_invalid_label_count": 0,
+  "test_missing_label_count": 0,
+  "train_candidate_count": 3,
+  "train_embargo_excluded_count": 0,
+  "train_final_count": 3,
+  "train_invalid_label_count": 0,
+  "train_missing_label_count": 0,
+  "train_purged_count": 0,
+  "validation_candidate_count": 3,
+  "validation_embargo_excluded_count": 0,
+  "validation_final_count": 3,
+  "validation_invalid_label_count": 0,
+  "validation_missing_label_count": 0,
+  "validation_purged_count": 0
+}

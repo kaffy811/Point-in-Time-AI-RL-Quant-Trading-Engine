@@ -1,0 +1,14 @@
+{
+  "gate": "A",
+  "status": "BLOCKED",
+  "decision": "DO NOT PASS GATE A",
+  "blockers": [
+    "CRSP/WRDS access evidence is unavailable in the current environment.",
+    "Norgate fallback access evidence is unavailable in the current environment.",
+    "SEC accession access is available, but the accession-level canonical adapter, historical linking and revision-complete pipeline are not implemented."
+  ],
+  "model_training": false,
+  "performance_research": false,
+  "research_results": "[TODO: 待实验结果]",
+  "rdr": "RDR-014-GATE-A"
+}
