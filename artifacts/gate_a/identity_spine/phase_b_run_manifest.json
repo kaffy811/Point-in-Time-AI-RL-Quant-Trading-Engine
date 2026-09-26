@@ -1,0 +1,35 @@
+{
+  "Gate A": "BLOCKED",
+  "config": {
+    "acceptance_conflict_policy": "FAIL_CLOSED_PENDING_RESEARCH_OWNER",
+    "additional_wrds_extraction": false,
+    "authorized_ciks": [
+      "0001505611",
+      "0001556266"
+    ],
+    "first_evidence_dates": {
+      "0001505611": "2011-09-08",
+      "0001556266": "2015-06-02"
+    },
+    "max_requests_per_invocation": 12,
+    "phase": "B1_B2",
+    "phase_a_manifest": "artifacts/gate_a/identity_spine/identity_manifest.json",
+    "sec_fixture_directory": "data/raw/sec/gate_a/data_02"
+  },
+  "config_sha256": "edd4aa4fc3e6f8b5cb2e2e93e615739b7a20d6d66892bbe0fd5a33afe2a9c435",
+  "final_sec_confirmed_observations": 0,
+  "implementation_sha256": {
+    "phase_b.py": "8a66cc56420413fab279d2a3fbbd8c99095424b292e9a54591cf42f81210f770",
+    "sec_confirmation.py": "83c1c7eac2e1f1321a7d4a43d901d6814a8f2bb82470f14d7d0eb4b5bc5cd0ba",
+    "sec_identity.py": "ac9e47251ac1a48228bd76c9145f28958772990fcc5bd4a58f361650d502b94b"
+  },
+  "licensed_outputs_sha256": {
+    "phase_b_identity_samples.parquet": "758d5671b351f805a27a70f6f0d4a682da1f9db7c74e37aaf203c5db2a5692de",
+    "unresolved_root_causes.parquet": "75775776220655997d7618b52c6f1223592f41bdecfc7f69e3129e5815f26ed2"
+  },
+  "original_five_issuer_requirement_satisfied": false,
+  "remaining_ambiguous_observations": 9,
+  "sec_confirmation_manifest_sha256": "1dec3c292f6cdc9d02eefa3ba3b9ca629457d50bf51ffaee09df6724e3d27f87",
+  "unique_sec_confirmed_issuers": 0,
+  "unresolved_reason_counts_sha256": "8684392d94742d4376b0bd584d1d4393d95ff3ef1edf17aac0b95b374c9e2485"
+}

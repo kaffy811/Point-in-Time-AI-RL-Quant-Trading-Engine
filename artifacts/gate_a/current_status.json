@@ -6,7 +6,7 @@
   "Gate A": "BLOCKED",
   "repository_location": "CONFIRMED CANONICAL ROOT: /Users/kaffy/Documents/RL Engine",
   "next_ticket": "GATE-A-DATA-02",
-  "next_ticket_started": false,
+  "next_ticket_started": true,
   "historical_probe": "provider_access_probe.json",
   "historical_probe_superseded_for_access_status": true,
   "independent_review": {
@@ -16,5 +16,54 @@
     "LOW": 0,
     "report": "../../docs/reviews/gate_a_infra_01_review.md"
   },
-  "baseline_status": "INITIAL TRACKED BASELINE AUTHORIZED"
+  "baseline_status": "COMMITTED AND VERIFIED",
+  "baseline_commit": "58805e7d49a8a871ee1cd6ec1356324013e6e092",
+  "data_02_branch": "gate-a/data-02-identity-spine",
+  "data_02_status": "IN PROGRESS / B2_BOUNDED_SGML_AUDIT_COMPLETE",
+  "data_02_temporal_policy": "APPROVED_WITH_SAME_DAY_SEC_ACCEPTANCE_REFINEMENT",
+  "data_02_phase_a_observations": 283,
+  "data_02_ciks_requiring_sec_confirmation": [
+    "0001505611",
+    "0001556266"
+  ],
+  "data_02_ambiguous_ciks": [
+    "0001293330",
+    "0001499961"
+  ],
+  "data_02_phase_a_review": {
+    "BLOCKER": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0,
+    "report": "docs/reviews/gate_a_data_02_phase_a_review.md"
+  },
+  "data_02_phase_b": {
+    "unresolved_observations_classified": 266,
+    "final_sec_confirmed_observations": 8,
+    "unique_sec_confirmed_issuers": 2,
+    "remaining_ambiguous_observations": 9,
+    "original_five_issuer_requirement_satisfied": false,
+    "fixture_protocol_v2": "PROPOSED_NOT_EXECUTED"
+  },
+  "data_02_phase_b_review": {
+    "BLOCKER": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0,
+    "report": "docs/reviews/gate_a_data_02_phase_b_review.md"
+  },
+  "data_02_sgml": {
+    "report": "artifacts/gate_a/identity_spine/sgml_confirmation_report.md",
+    "SEC_CONFIRMED": 8,
+    "ROLE_CONFLICT": 2,
+    "NOT_YET_AVAILABLE": 0,
+    "PENDING_SOURCE_UNAVAILABLE": 0,
+    "review": {
+      "BLOCKER": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "report": "docs/reviews/gate_a_data_02_sgml_review.md"
+    }
+  }
 }

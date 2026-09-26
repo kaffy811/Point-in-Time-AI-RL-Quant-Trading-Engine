@@ -1,0 +1,123 @@
+{
+  "Gate A": "BLOCKED",
+  "ambiguous_ciks_requiring_investigation": [
+    "0001293330",
+    "0001499961"
+  ],
+  "ccm_crosscheck": "NOT_RUN_PHASE_A",
+  "ciks_requiring_sec_confirmation": [
+    "0001505611",
+    "0001556266"
+  ],
+  "config": {
+    "anchor_dates": [
+      "2015-06-30"
+    ],
+    "fixture_manifest": "data/raw/wrds/gate_a/data_02/wrds_fixture_manifest.json",
+    "observation_policy": "history_boundaries_and_link_first_dates_v1",
+    "output": "artifacts/gate_a/identity_spine",
+    "permnos": [
+      78690,
+      12350,
+      14093,
+      90298,
+      13030
+    ],
+    "phase": "A",
+    "signal_time": "16:10:00",
+    "timezone": "America/New_York"
+  },
+  "config_sha256": "946537b6fb82e8fbbf45b2ef9a5b8a16852e387ae0159a9ae729251daca29aee",
+  "final_sec_identity_confirmed": false,
+  "fixture_manifest_sha256": "6f7e2e78e4f65c7c808bd5d6a248377e991a72baf4ceb151474facbf1498e780",
+  "future_invariance": {
+    "append_future_records": {
+      "passed": 283,
+      "total": 283
+    },
+    "mutate_future_payloads": {
+      "passed": 283,
+      "total": 283
+    },
+    "remove_future_records": {
+      "passed": 283,
+      "total": 283
+    },
+    "remove_last_date_and_tmatch": {
+      "passed": 283,
+      "total": 283
+    },
+    "repeat": {
+      "passed": 283,
+      "total": 283
+    },
+    "reverse_input_order": {
+      "passed": 283,
+      "total": 283
+    }
+  },
+  "implementation_sha256": {
+    "__init__.py": "80f70b2ad89d2773cbc6ddac4c9681e06a8a6e05641ffbe7dbee119ed507e37a",
+    "audit.py": "c07e90e65a555f55da716ec5d9bdb2d36f786ac4fa9fa93acff4640c560cba98",
+    "cli.py": "958017ca104e6ec10370a62a166d6425085b60c5b187364a983461e49d32f692",
+    "phase_a.py": "1802471a08b06ab82725557fc43121b115906f37c35f432bddfdf6fae25e467b"
+  },
+  "independent_review_report": "docs/reviews/gate_a_data_02_phase_a_review.md",
+  "licensed_outputs": {
+    "ambiguous_links.parquet": "6b44179bc09508a5154685334cca9f0b9fcf4159c9bfcbbb477e2ec5a989204c",
+    "identity_samples.parquet": "784105c9a97e58a43dfeb35845575d9dfb8a96dd84827416969c09b4af9f99b5",
+    "wrds_link_evidence.parquet": "586114efce328ab5051ac4c4865a65a810afb4cb142d34f600e05024d5cb5714"
+  },
+  "limitations": [
+    "No SEC accession confirmation or CCM cross-check performed.",
+    "No historical WRDS revision snapshots; retrospective corrections are unproven.",
+    "tmatch/cikdate2 retained only in ignored raw audit, not historical resolution.",
+    "Five multi-history securities are not a frozen cohort or proof of all fixture categories."
+  ],
+  "nonvacuous_future_history_observations": 275,
+  "nonvacuous_future_link_observations": 281,
+  "observation_count": 283,
+  "phase": "A",
+  "provider_retrieved_at": "2026-09-25T19:19:27.004568+00:00",
+  "real_8_digit_fallback_coverage": false,
+  "real_permno_count": 5,
+  "reason_counts": {
+    "MULTIPLE_PLAUSIBLE_CIKS": 9,
+    "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK": 241,
+    "NO_HISTORICAL_CUSIP": 5,
+    "NO_HISTORICAL_SECURITY_RECORD": 18,
+    "SAME_DAY_SEC_ACCEPTANCE_CONFIRMATION_REQUIRED": 2,
+    "UNIQUE_HISTORICALLY_EVIDENCED_CIK": 8
+  },
+  "same_day_ciks_requiring_acceptance_check": [
+    "0001505611",
+    "0001556266"
+  ],
+  "sec_archive_validation": "NOT_RUN_PHASE_A",
+  "sources": [
+    {
+      "rows": 91,
+      "schema": "permno: int64\nsecinfostartdt: string\nsecinfoenddt: string\nticker: string\ntradingsymbol: string\ncusip: string\ncusip9: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 896",
+      "sha256": "792d0a031997b6f1d94082b693c8c11ff2639057f8bb494f695d0381a7f0d85b",
+      "source_table": "crsp.stksecurityinfohist"
+    },
+    {
+      "rows": 35,
+      "schema": "cik: string\nconame: string\ncusip: string\ncusip_full: string\ncikdate1: string\ncikdate2: string\ntmatch: double\nvalidated: double\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 987",
+      "sha256": "47b4d80a3b793b129bedb78a5dfc47779fbf188d0544e8318a4be78d32c6c5f6",
+      "source_table": "wrdssec_common.wciklink_cusip"
+    }
+  ],
+  "status": "PRELIMINARY_COMPLETED",
+  "status_counts": {
+    "AMBIGUOUS": 9,
+    "RESOLVED_PENDING_SEC_CONFIRMATION": 8,
+    "UNRESOLVED": 266
+  },
+  "ticket": "GATE-A-DATA-02",
+  "validated_input_counts": {
+    "0": 28,
+    "1": 2,
+    "3": 5
+  }
+}

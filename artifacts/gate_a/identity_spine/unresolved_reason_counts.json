@@ -1,0 +1,161 @@
+{
+  "Gate A": "BLOCKED",
+  "classification_scope": "RETROSPECTIVE_AUDIT_ONLY",
+  "counts": {
+    "CUSIP_MATCH_CLASS_MISMATCH": 0,
+    "FIRST_EVIDENCE_AFTER_ASOF": 12,
+    "FIRST_EVIDENCE_DATE_MISSING": 0,
+    "FIRST_EVIDENCE_SAME_DAY_NEEDS_SEC": 2,
+    "MULTIPLE_SECURITY_HISTORY_ROWS": 0,
+    "NO_CRSP_CUSIP_ASOF": 23,
+    "NO_WRDS_LINK_FOR_CUSIP": 70,
+    "ONLY_UNVALIDATED_WRDS_LINK": 159,
+    "OTHER": 0
+  },
+  "mutually_exclusive": true,
+  "note": "Future/current snapshot evidence explains failure only; never changes a past result.",
+  "phase": "B1",
+  "phase_a_manifest_sha256": "f1d8f82cdc2419b42de806d0ec6d17d10bf2d1f8c73bde2a7460a6835a984a0e",
+  "phase_a_results_unchanged": true,
+  "precedence": [
+    "NO_ACTIVE_HISTORY_AS_NO_CRSP_CUSIP_ASOF",
+    "MULTIPLE_SECURITY_HISTORY_ROWS",
+    "NO_CRSP_CUSIP_ASOF",
+    "INCONSISTENT_CRSP_PAIR_AS_CUSIP_MATCH_CLASS_MISMATCH",
+    "NO_WRDS_LINK_FOR_CUSIP",
+    "ONLY_UNVALIDATED_WRDS_LINK",
+    "CUSIP_MATCH_CLASS_MISMATCH",
+    "FIRST_EVIDENCE_SAME_DAY_NEEDS_SEC",
+    "FIRST_EVIDENCE_DATE_MISSING",
+    "FIRST_EVIDENCE_AFTER_ASOF",
+    "OTHER"
+  ],
+  "representative_real_examples": {
+    "CUSIP_MATCH_CLASS_MISMATCH": [],
+    "FIRST_EVIDENCE_AFTER_ASOF": [
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2012-10-03",
+        "future_matching_strong_rows": 3,
+        "matching_strong_rows": 3,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK",
+        "related_link_rows": 4,
+        "security_id": 12350,
+        "unresolved_root_cause": "FIRST_EVIDENCE_AFTER_ASOF"
+      },
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2012-10-08",
+        "future_matching_strong_rows": 3,
+        "matching_strong_rows": 3,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK",
+        "related_link_rows": 4,
+        "security_id": 12350,
+        "unresolved_root_cause": "FIRST_EVIDENCE_AFTER_ASOF"
+      }
+    ],
+    "FIRST_EVIDENCE_DATE_MISSING": [],
+    "FIRST_EVIDENCE_SAME_DAY_NEEDS_SEC": [
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2015-06-02",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 1,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "SAME_DAY_SEC_ACCEPTANCE_CONFIRMATION_REQUIRED",
+        "related_link_rows": 2,
+        "security_id": 14093,
+        "unresolved_root_cause": "FIRST_EVIDENCE_SAME_DAY_NEEDS_SEC"
+      },
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2011-09-08",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 1,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "SAME_DAY_SEC_ACCEPTANCE_CONFIRMATION_REQUIRED",
+        "related_link_rows": 1,
+        "security_id": 78690,
+        "unresolved_root_cause": "FIRST_EVIDENCE_SAME_DAY_NEEDS_SEC"
+      }
+    ],
+    "MULTIPLE_SECURITY_HISTORY_ROWS": [],
+    "NO_CRSP_CUSIP_ASOF": [
+      {
+        "active_history_rows": 0,
+        "as_of_date": "2010-10-21",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 0,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICAL_SECURITY_RECORD",
+        "related_link_rows": 0,
+        "security_id": 12350,
+        "unresolved_root_cause": "NO_CRSP_CUSIP_ASOF"
+      },
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2025-10-11",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 0,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICAL_CUSIP",
+        "related_link_rows": 0,
+        "security_id": 12350,
+        "unresolved_root_cause": "NO_CRSP_CUSIP_ASOF"
+      }
+    ],
+    "NO_WRDS_LINK_FOR_CUSIP": [
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2016-05-25",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 0,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK",
+        "related_link_rows": 0,
+        "security_id": 12350,
+        "unresolved_root_cause": "NO_WRDS_LINK_FOR_CUSIP"
+      },
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2017-10-04",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 0,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK",
+        "related_link_rows": 0,
+        "security_id": 12350,
+        "unresolved_root_cause": "NO_WRDS_LINK_FOR_CUSIP"
+      }
+    ],
+    "ONLY_UNVALIDATED_WRDS_LINK": [
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2010-10-22",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 0,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK",
+        "related_link_rows": 2,
+        "security_id": 12350,
+        "unresolved_root_cause": "ONLY_UNVALIDATED_WRDS_LINK"
+      },
+      {
+        "active_history_rows": 1,
+        "as_of_date": "2011-02-10",
+        "future_matching_strong_rows": 0,
+        "matching_strong_rows": 0,
+        "null_first_matching_strong_rows": 0,
+        "phase_a_reason": "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK",
+        "related_link_rows": 2,
+        "security_id": 12350,
+        "unresolved_root_cause": "ONLY_UNVALIDATED_WRDS_LINK"
+      }
+    ],
+    "OTHER": []
+  },
+  "ticket": "GATE-A-DATA-02",
+  "unresolved_observations": 266
+}

@@ -1,0 +1,195 @@
+{
+  "DATA-02": "IN PROGRESS",
+  "Gate A": "BLOCKED",
+  "accessions": [
+    {
+      "acceptance_datetime": "2011-09-08T14:22:19+00:00",
+      "acceptance_raw": "20110908102219",
+      "acceptance_source": "RAW_SGML_EASTERN_PER_P1_02",
+      "accessionNumber": "0001019432-11-000009",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ],
+      "cik": "0001505611",
+      "filer_ciks": [
+        "0001019432"
+      ],
+      "filingDate": "2011-09-08",
+      "form": "SC 13G/A",
+      "purpose": "SAME_DAY_FIRST_EVIDENCE",
+      "receipt": {
+        "bytes_received": 4096,
+        "extraction": "EXACT_SUBMISSION_PREFIX_THROUGH_CLOSING_HEADER",
+        "header_bytes_saved": 1661,
+        "http_status": 200,
+        "path": "0001019432-11-000009.header.sgml",
+        "retrieved_at": "2026-09-26T00:14:14.421297+00:00",
+        "sha256": "fe09280a3389744fb332a06e57eb5de72d05cc18064285d4e462d2e332fbeae3",
+        "url": "https://www.sec.gov/Archives/edgar/data/1505611/000101943211000009/0001019432-11-000009.txt"
+      },
+      "roles": {
+        "FILED BY": [
+          "0001019432"
+        ],
+        "SUBJECT COMPANY": [
+          "0001505611"
+        ]
+      },
+      "secondary_acceptance_datetime": "2011-09-08T10:22:19.000Z",
+      "secondary_source_sha256": "8c08c8c11ae86f84e5caa8dae6846fae2b8c5e54b4a10de8f140a1bb90961f88",
+      "sgml_minus_secondary_seconds": 14400.0,
+      "status": "RETRIEVED",
+      "url": "https://www.sec.gov/Archives/edgar/data/1505611/000101943211000009/0001019432-11-000009.txt"
+    },
+    {
+      "acceptance_datetime": "2011-08-22T21:12:24+00:00",
+      "acceptance_raw": "20110822171224",
+      "acceptance_source": "RAW_SGML_EASTERN_PER_P1_02",
+      "accessionNumber": "0001013762-11-002352",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ],
+      "cik": "0001505611",
+      "filer_ciks": [
+        "0001505611"
+      ],
+      "filingDate": "2011-08-22",
+      "form": "10-Q",
+      "purpose": "PRIOR_ISSUER_FILING",
+      "receipt": {
+        "bytes_received": 4096,
+        "extraction": "EXACT_SUBMISSION_PREFIX_THROUGH_CLOSING_HEADER",
+        "header_bytes_saved": 1093,
+        "http_status": 200,
+        "path": "0001013762-11-002352.header.sgml",
+        "retrieved_at": "2026-09-26T00:14:15.247401+00:00",
+        "sha256": "0d6e4121dc55612fe0e3c9683a05ed8a4a6088d454fafa227734e5adf8c1fdc1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1505611/000101376211002352/0001013762-11-002352.txt"
+      },
+      "roles": {
+        "FILER": [
+          "0001505611"
+        ]
+      },
+      "secondary_acceptance_datetime": "2011-08-22T17:12:24.000Z",
+      "secondary_source_sha256": "8c08c8c11ae86f84e5caa8dae6846fae2b8c5e54b4a10de8f140a1bb90961f88",
+      "sgml_minus_secondary_seconds": 14400.0,
+      "status": "RETRIEVED",
+      "url": "https://www.sec.gov/Archives/edgar/data/1505611/000101376211002352/0001013762-11-002352.txt"
+    },
+    {
+      "acceptance_datetime": "2015-06-02T16:43:57+00:00",
+      "acceptance_raw": "20150602124357",
+      "acceptance_source": "RAW_SGML_EASTERN_PER_P1_02",
+      "accessionNumber": "0001213900-15-004248",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ],
+      "cik": "0001556266",
+      "filer_ciks": [
+        "0001643794"
+      ],
+      "filingDate": "2015-06-02",
+      "form": "SC 13G",
+      "purpose": "SAME_DAY_FIRST_EVIDENCE",
+      "receipt": {
+        "bytes_received": 4096,
+        "extraction": "EXACT_SUBMISSION_PREFIX_THROUGH_CLOSING_HEADER",
+        "header_bytes_saved": 1330,
+        "http_status": 200,
+        "path": "0001213900-15-004248.header.sgml",
+        "retrieved_at": "2026-09-26T00:14:15.977084+00:00",
+        "sha256": "ce3e5c60d510245c0ba72e203de7426dd26f76c5151e175d2c9fe8039e065682",
+        "url": "https://www.sec.gov/Archives/edgar/data/1556266/000121390015004248/0001213900-15-004248.txt"
+      },
+      "roles": {
+        "FILED BY": [
+          "0001643794"
+        ],
+        "SUBJECT COMPANY": [
+          "0001556266"
+        ]
+      },
+      "secondary_acceptance_datetime": "2015-06-02T12:43:57.000Z",
+      "secondary_source_sha256": "ac6aee745ac3cd1928cec86889595cee379cbe63a999dd3613282bcbfc322487",
+      "sgml_minus_secondary_seconds": 14400.0,
+      "status": "RETRIEVED",
+      "url": "https://www.sec.gov/Archives/edgar/data/1556266/000121390015004248/0001213900-15-004248.txt"
+    },
+    {
+      "acceptance_datetime": "2015-05-20T19:35:09+00:00",
+      "acceptance_raw": "20150520153509",
+      "acceptance_source": "RAW_SGML_EASTERN_PER_P1_02",
+      "accessionNumber": "0001213900-15-004052",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ],
+      "cik": "0001556266",
+      "filer_ciks": [
+        "0001556266"
+      ],
+      "filingDate": "2015-05-20",
+      "form": "10-Q",
+      "purpose": "PRIOR_ISSUER_FILING",
+      "receipt": {
+        "bytes_received": 4096,
+        "extraction": "EXACT_SUBMISSION_PREFIX_THROUGH_CLOSING_HEADER",
+        "header_bytes_saved": 1069,
+        "http_status": 200,
+        "path": "0001213900-15-004052.header.sgml",
+        "retrieved_at": "2026-09-26T00:14:16.841799+00:00",
+        "sha256": "3bd8625649c74ee372fa6d41574a9b37462468be90fb8c432e269ca40ffe4341",
+        "url": "https://www.sec.gov/Archives/edgar/data/1556266/000121390015004052/0001213900-15-004052.txt"
+      },
+      "roles": {
+        "FILER": [
+          "0001556266"
+        ]
+      },
+      "secondary_acceptance_datetime": "2015-05-20T15:35:09.000Z",
+      "secondary_source_sha256": "ac6aee745ac3cd1928cec86889595cee379cbe63a999dd3613282bcbfc322487",
+      "sgml_minus_secondary_seconds": 14400.0,
+      "status": "RETRIEVED",
+      "url": "https://www.sec.gov/Archives/edgar/data/1556266/000121390015004052/0001213900-15-004052.txt"
+    }
+  ],
+  "config_sha256": "ad1c56a4f312cf710b7782a2bf5b53184b0090e930a734031f4cce997a357f4e",
+  "confirmed_ciks": [
+    "0001505611",
+    "0001556266"
+  ],
+  "eligible_observations": 10,
+  "fixture_protocol_v2": "NOT_EXECUTED",
+  "implementation_sha256": {
+    "sec_sgml.py": "aea0dedbec87c1de12c02ff17a51074e22fb1c4efce61a910487c54703fe56ae",
+    "sgml_audit.py": "12814a7617906c76bfd392b36aeddafcb067293b602cc80aaabe47709fc28107"
+  },
+  "licensed_output_sha256": "55e4f429205109fccfb8c61ec47d77cd25641476133518c4e8f08be59d13bcef",
+  "observation_status_counts": {
+    "AMBIGUOUS": 0,
+    "NOT_YET_AVAILABLE": 0,
+    "PENDING_SOURCE_UNAVAILABLE": 0,
+    "ROLE_CONFLICT": 2,
+    "SEC_CONFIRMED": 8
+  },
+  "original_five_issuer_requirement_satisfied": false,
+  "phase": "B2_SGML",
+  "phase_a_manifest_sha256": "f1d8f82cdc2419b42de806d0ec6d17d10bf2d1f8c73bde2a7460a6835a984a0e",
+  "phase_a_results_unchanged": true,
+  "raw_manifest_sha256": "1e7917a55681b4ee7bba7225c005e97ea948ef6b203b023c43f3668685f05cd2",
+  "remaining_phase_a_ambiguous_observations": 9,
+  "secondary_manifest_sha256": "ab9526f41d336ce6e43cff44e89675cc0380818ad5af9bd600a6b3c84a82ba39",
+  "unique_sec_confirmed_issuers": 2
+}

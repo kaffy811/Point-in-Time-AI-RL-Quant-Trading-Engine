@@ -126,3 +126,98 @@ PASS; Gate A remains BLOCKED. Create a tracked baseline excluding licensed raw/c
 data, credentials, environment files and generated Parquet; verify Git status, tracked
 files and latest commit, then create `gate-a/data-02-identity-spine`. DATA-02 is authorized
 after those steps. This supersedes the pending repository-confirmation entries above.
+
+
+## DATA-02 evidence-time eligibility — OPEN (implementation dependency)
+
+Baseline commit and DATA-02 branch creation are complete. The owner has frozen
+validated 2/3 candidates and first/last filing-date evidence semantics, but not the
+exact rule for future-only or missing first-observation dates. Proposed rule for
+approval: only `cikdate1 <= as_of_date` evidence participates in automatic resolution;
+missing/future first evidence is excluded with an explicit audit reason. `cikdate2`
+never expires a link. Its future endpoint is not usable historical evidence; retain
+raw provenance separately from the historical result to avoid future edits changing
+that result. This proposal is not yet approved; do not implement dependent candidate
+selection or claim invariance from an unapproved policy. Real local WRDS input paths
+have been requested separately; provider access PASS itself remains settled.
+
+
+## DATA-02 temporal link and CUSIP matching decision — APPROVED WITH REFINEMENT
+
+The latest Research Owner instruction supersedes the open evidence-time proposal.
+Real WRDS fixtures belong in `data/raw/wrds/gate_a/data_02/`, with separate Parquet
+inputs for `crsp.stksecurityinfohist` and `wrdssec_common.wciklink_cusip`. SEC accession
+fixtures belong in `data/raw/sec/gate_a/data_02/`. Raw/licensed data remain Git-ignored;
+tracked manifests and audits belong in `artifacts/gate_a/identity_spine/`.
+
+Automatic candidates require validated 2/3 and `cikdate1 <= as_of_date`. Strictly earlier
+first filing dates can supply historical evidence. Equal-date evidence alone is
+insufficient: require an accession-level SEC filing accepted no later than the exact
+`as_of_timestamp`. Future or null `cikdate1` cannot auto-resolve. `cikdate2` remains only
+the last observed filing date; it never expires the identity. It must not be presented
+as an identity-validity endpoint.
+
+Prefer exact CRSP `cusip9` → WRDS `cusip_full` with validated=3. Fallback uses exact
+CRSP `cusip` → WRDS `cusip` with validated=2. Multiple plausible CIKs yield AMBIGUOUS;
+tmatch is retained as evidence only and never ranks an automatic winner. No current
+identifier backfill, fabricated/check-digit-inferred identifier, or synthetic evidence
+may replace the required real fixtures. Prior frozen DATA-02 non-goals still apply.
+
+Local inspection after this decision found neither specified input directory existed.
+The directories have now been created empty under existing Git-ignore rules. No local
+real WRDS/SEC inputs have been inspected or resolved. Fixture availability, not policy
+approval or provider access entitlement, is the outstanding dependency. DATA-02 remains
+BLOCKED_MISSING_REAL_FIXTURES; Gate A remains BLOCKED.
+
+
+## DATA-02 Phase A authorization and execution — 2026-09-25
+
+The owner supplied real WRDS fixture files and authorized the preliminary chain only:
+PERMNO → historical CUSIP → WRDS CIK candidate. This supersedes the missing-input
+blocker and allows progress without SEC fixtures. Phase A statuses are exclusively
+RESOLVED_PENDING_SEC_CONFIRMATION, AMBIGUOUS, UNRESOLVED; no final SEC identity is
+inferred. Equal-date first evidence stays unresolved pending later accession acceptance
+checks. Earlier frozen validated/tier/date rules remain binding; tmatch never breaks ties.
+
+Input hashes/rows verified against the owner manifest: 91 history rows, 35 links, five
+PERMNOs. Real boundary/first-evidence/anchor sampling yields 283 observations: eight
+pending SEC, nine ambiguous, 266 unresolved. All six complete-result invariance checks
+pass for all observations. Snapshot-only tmatch/cikdate2 remain in ignored raw audit;
+they do not alter historical decisions. No bulk fetch or manufactured real evidence.
+No validated=2 links are present; real fallback coverage is explicitly unexercised.
+SEC/CCM and final fixture-category acceptance remain deferred. Gate A remains BLOCKED.
+
+
+## DATA-02 Phase B1/B2 owner authorization and acceptance-source ambiguity
+
+Phase A is accepted with BLOCKER=0/HIGH=0 and remains byte-for-byte frozen. B1 is a
+retrospective administrative audit only: all 266 unresolved observations receive one
+reason; it must not use future evidence to upgrade history. B2 extraction is limited
+to CIK0001505611 and CIK0001556266 and bounded accession metadata. No ambiguous CIK or
+additional WRDS extraction is authorized. DATA-02 cannot pass on two issuers.
+
+**OPEN — acceptance-time source conflict:** actual accession 0001213900-15-004052 has
+API acceptanceDateTime 2015-05-20T15:35:09.000Z versus archive-index clock 2015-05-20
+15:35:09 without an offset. P1-02's existing Eastern convention covers SGML headers;
+it does not establish conflict precedence for unzoned HTML index versus explicit API
+UTC. Do not relabel timestamps or automatically certify a canonical instant. Keep
+confirmation pending; proposal is bounded SGML header evidence plus owner-approved
+source precedence before dependent behavior. The question has been sent to the owner.
+
+B2 also observes the first-date SC13G candidate as Subject rather than filer, while
+CIK0001505611 archive indexes remain HTTP503 after bounded retry. Final confirmed counts
+are zero observations/zero issuers; nine ambiguous observations remain untouched.
+The five-issuer requirement is unsatisfied. `gate_a_data_02_fixture_protocol_v2.md` is
+an unexecuted, deterministic proposal requiring owner approval before any new WRDS data.
+
+## DATA-02 B2 SGML evidence priority — OWNER APPROVED, 2026-09-25
+
+Supersedes the previous OPEN acceptance-source priority question for these pending
+accessions. The Research Owner authorizes bounded raw SGML retrieval only for the
+four existing cases. Raw ACCEPTANCE-DATETIME and FILER COMPANY DATA are primary;
+exact-accession structured metadata is secondary; WRDS cikdate1 remains date-only.
+P1-02 Eastern-to-UTC normalization applies to SGML. Subject-only presence cannot
+confirm identity, multiple plausible filers remain ambiguous, and unavailable raw
+sources remain PENDING_SOURCE_UNAVAILABLE after bounded backoff. Phase A remains
+frozen. No fixture-protocol-v2 execution is authorized. DATA-02 remains IN PROGRESS
+and Gate A BLOCKED. Results and offline verification: docs/gate_a_data_02_sgml.md.

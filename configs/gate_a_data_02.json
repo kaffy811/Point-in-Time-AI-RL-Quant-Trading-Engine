@@ -1,0 +1,10 @@
+{
+  "phase": "A",
+  "fixture_manifest": "data/raw/wrds/gate_a/data_02/wrds_fixture_manifest.json",
+  "permnos": [78690, 12350, 14093, 90298, 13030],
+  "observation_policy": "history_boundaries_and_link_first_dates_v1",
+  "anchor_dates": ["2015-06-30"],
+  "signal_time": "16:10:00",
+  "timezone": "America/New_York",
+  "output": "artifacts/gate_a/identity_spine"
+}

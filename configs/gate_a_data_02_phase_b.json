@@ -1,0 +1,10 @@
+{
+  "phase": "B1_B2",
+  "phase_a_manifest": "artifacts/gate_a/identity_spine/identity_manifest.json",
+  "sec_fixture_directory": "data/raw/sec/gate_a/data_02",
+  "authorized_ciks": ["0001505611", "0001556266"],
+  "first_evidence_dates": {"0001505611": "2011-09-08", "0001556266": "2015-06-02"},
+  "max_requests_per_invocation": 12,
+  "acceptance_conflict_policy": "FAIL_CLOSED_PENDING_RESEARCH_OWNER",
+  "additional_wrds_extraction": false
+}

@@ -1,0 +1,15 @@
+{
+  "phase": "B2_SGML",
+  "sec_fixture_directory": "data/raw/sec/gate_a/data_02",
+  "max_attempts_per_accession": 3,
+  "backoff_seconds": [1, 2],
+  "max_prefix_bytes": 65536,
+  "acceptance_timezone": "America/New_York",
+  "evidence_priority": "RAW_SGML_THEN_EXACT_ACCESSION_METADATA_THEN_WRDS_DATE",
+  "cases": [
+    {"cik": "0001505611", "accessionNumber": "0001019432-11-000009", "purpose": "SAME_DAY_FIRST_EVIDENCE"},
+    {"cik": "0001505611", "accessionNumber": "0001013762-11-002352", "purpose": "PRIOR_ISSUER_FILING"},
+    {"cik": "0001556266", "accessionNumber": "0001213900-15-004248", "purpose": "SAME_DAY_FIRST_EVIDENCE"},
+    {"cik": "0001556266", "accessionNumber": "0001213900-15-004052", "purpose": "PRIOR_ISSUER_FILING"}
+  ]
+}

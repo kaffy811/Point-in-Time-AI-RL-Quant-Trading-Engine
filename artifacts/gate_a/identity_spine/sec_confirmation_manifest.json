@@ -1,0 +1,85 @@
+{
+  "DATA-02": "NOT_PASS",
+  "Gate A": "BLOCKED",
+  "authorized_ciks": [
+    "0001505611",
+    "0001556266"
+  ],
+  "final_sec_confirmed_observations": 0,
+  "five_issuer_requirement_reason": "Fewer than five authorized/validated issuers; category coverage also unproven",
+  "original_five_issuer_requirement_satisfied": false,
+  "phase": "B2",
+  "phase_a_results_unchanged": true,
+  "phase_b_status_counts": {
+    "AMBIGUOUS": 9,
+    "RESOLVED_PENDING_SEC_CONFIRMATION": 8,
+    "UNRESOLVED": 266
+  },
+  "remaining_ambiguous_observations": 9,
+  "sec_fixture_manifest_sha256": "ab9526f41d336ce6e43cff44e89675cc0380818ad5af9bd600a6b3c84a82ba39",
+  "selected_accessions": [
+    {
+      "acceptanceDateTime": "2011-09-08T10:22:19.000Z",
+      "accessionNumber": "0001019432-11-000009",
+      "api_acceptance_timestamp_parsed": "2011-09-08T10:22:19+00:00",
+      "archive_confirmed": false,
+      "cik": "0001505611",
+      "confirmation_reason": "ARCHIVE_UNAVAILABLE",
+      "filingDate": "2011-09-08",
+      "form": "SC 13G/A",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1505611/000101943211000009/0001019432-11-000009-index.htm",
+      "primaryDocument": "dpsi13ga3.txt",
+      "reportDate": "",
+      "retrieval_status": "SEC metadata HTTP 503",
+      "selection_purpose": "SAME_DAY_FIRST_EVIDENCE"
+    },
+    {
+      "acceptanceDateTime": "2011-08-22T17:12:24.000Z",
+      "accessionNumber": "0001013762-11-002352",
+      "api_acceptance_timestamp_parsed": "2011-08-22T17:12:24+00:00",
+      "archive_confirmed": false,
+      "cik": "0001505611",
+      "confirmation_reason": "ARCHIVE_UNAVAILABLE",
+      "filingDate": "2011-08-22",
+      "form": "10-Q",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1505611/000101376211002352/0001013762-11-002352-index.htm",
+      "primaryDocument": "form10q.htm",
+      "reportDate": "2011-06-30",
+      "retrieval_status": "SEC metadata HTTP 503",
+      "selection_purpose": "PRIOR_ISSUER_FILING"
+    },
+    {
+      "acceptanceDateTime": "2015-06-02T12:43:57.000Z",
+      "accessionNumber": "0001213900-15-004248",
+      "api_acceptance_timestamp_parsed": "2015-06-02T12:43:57+00:00",
+      "archive_confirmed": false,
+      "cik": "0001556266",
+      "confirmation_reason": "ARCHIVE_FILER_CIK_MISMATCH_OR_AMBIGUOUS",
+      "filingDate": "2015-06-02",
+      "form": "SC 13G",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1556266/000121390015004248/0001213900-15-004248-index.htm",
+      "primaryDocument": "sc13g0515tseung_chinacomm.htm",
+      "reportDate": "",
+      "retrieval_status": "RETRIEVED",
+      "selection_purpose": "SAME_DAY_FIRST_EVIDENCE"
+    },
+    {
+      "acceptanceDateTime": "2015-05-20T15:35:09.000Z",
+      "accessionNumber": "0001213900-15-004052",
+      "api_acceptance_timestamp_parsed": "2015-05-20T15:35:09+00:00",
+      "archive_confirmed": false,
+      "cik": "0001556266",
+      "confirmation_reason": "ACCEPTANCE_TIME_SOURCE_CONFLICT_OWNER_DECISION_REQUIRED",
+      "filingDate": "2015-05-20",
+      "form": "10-Q",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1556266/000121390015004052/0001213900-15-004052-index.htm",
+      "primaryDocument": "f10q0315_chinacommercial.htm",
+      "reportDate": "2015-03-31",
+      "retrieval_status": "RETRIEVED",
+      "selection_purpose": "PRIOR_ISSUER_FILING"
+    }
+  ],
+  "status": "PARTIAL_ARCHIVE_CONFIRMATION_BLOCKED",
+  "ticket": "GATE-A-DATA-02",
+  "unique_sec_confirmed_issuers": 0
+}
