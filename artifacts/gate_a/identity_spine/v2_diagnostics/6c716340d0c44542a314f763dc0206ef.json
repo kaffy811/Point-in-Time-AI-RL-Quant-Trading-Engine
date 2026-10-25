@@ -1,0 +1,27 @@
+{
+  "Gate A": "BLOCKED",
+  "exception_class": "FileNotFoundError",
+  "existing_artifact_paths": [],
+  "frozen_permno_count": 0,
+  "frozen_selection_structure_valid": false,
+  "historical_failure_recovered": false,
+  "operation_stage": "FREEZE_SELECTION",
+  "paths_successfully_written_before_failure": [],
+  "pipeline_stage": "FREEZE_SELECTION",
+  "query_identifier": "CHECK_SELECTION_MANIFEST",
+  "raw_directory_empty": true,
+  "raw_directory_exists": true,
+  "recorded_at": "2026-09-27T03:13:25.963006+00:00",
+  "sanitized_exception_message": "Required frozen selection manifest missing: artifacts/gate_a/identity_spine/v2_selection_manifest.json; role=durable six-PERMNO selection evidence.",
+  "selection_already_frozen": false,
+  "source_tables": [],
+  "state_at_start": {
+    "existing_artifact_paths": [],
+    "frozen_permno_count": 0,
+    "frozen_selection_structure_valid": false,
+    "raw_directory_empty": true,
+    "raw_directory_exists": true,
+    "selection_already_frozen": false
+  },
+  "status": "FAILED"
+}

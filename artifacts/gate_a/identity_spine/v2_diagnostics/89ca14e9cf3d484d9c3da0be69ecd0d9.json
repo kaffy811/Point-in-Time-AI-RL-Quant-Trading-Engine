@@ -1,0 +1,27 @@
+{
+  "Gate A": "BLOCKED",
+  "exception_class": "FileNotFoundError",
+  "existing_artifact_paths": [],
+  "frozen_permno_count": 0,
+  "frozen_selection_structure_valid": false,
+  "historical_failure_recovered": false,
+  "operation_stage": "FREEZE_SELECTION",
+  "paths_successfully_written_before_failure": [],
+  "pipeline_stage": "FREEZE_SELECTION",
+  "query_identifier": "REQUIRE_EXISTING_FROZEN_SELECTION",
+  "raw_directory_empty": true,
+  "raw_directory_exists": true,
+  "recorded_at": "2026-09-26T01:06:08.495914+00:00",
+  "sanitized_exception_message": "Required local artifact is missing.",
+  "selection_already_frozen": false,
+  "source_tables": [],
+  "state_at_start": {
+    "existing_artifact_paths": [],
+    "frozen_permno_count": 0,
+    "frozen_selection_structure_valid": false,
+    "raw_directory_empty": true,
+    "raw_directory_exists": true,
+    "selection_already_frozen": false
+  },
+  "status": "FAILED"
+}

@@ -1,0 +1,27 @@
+{
+  "Gate A": "BLOCKED",
+  "exception_class": "FileExistsError",
+  "existing_artifact_paths": [],
+  "frozen_permno_count": 0,
+  "frozen_selection_structure_valid": false,
+  "historical_failure_recovered": false,
+  "operation_stage": "WRITE_RAW_FIXTURE",
+  "paths_successfully_written_before_failure": [],
+  "pipeline_stage": "WRITE_RAW_FIXTURE",
+  "query_identifier": "OFFLINE_REPLAY_OLD_DIRECTORY_RESERVATION",
+  "raw_directory_empty": true,
+  "raw_directory_exists": true,
+  "recorded_at": "2026-09-26T01:09:16.195685+00:00",
+  "sanitized_exception_message": "Destination already exists; overwrite refused.",
+  "selection_already_frozen": false,
+  "source_tables": [],
+  "state_at_start": {
+    "existing_artifact_paths": [],
+    "frozen_permno_count": 0,
+    "frozen_selection_structure_valid": false,
+    "raw_directory_empty": true,
+    "raw_directory_exists": true,
+    "selection_already_frozen": false
+  },
+  "status": "FAILED"
+}

@@ -1,0 +1,16 @@
+{
+  "protocol": "DATA-02-V2",
+  "window_start": "2010-01-01",
+  "window_end": "2025-12-31",
+  "candidate_cap": 60,
+  "sample_size": 6,
+  "excluded_permnos": [12350, 13030, 14093, 78690, 90298],
+  "candidate_order": "NUMERIC_PERMNO_ASCENDING",
+  "strata_order": ["ordinary_long_lived", "ticker_change", "cusip_change", "membership_change", "combined_identity_change_proxy", "amendment_check_after_freeze"],
+  "history_row_cap": 500,
+  "link_row_cap": 200,
+  "as_of_dates": ["2010-06-30", "2015-06-30", "2020-06-30", "2025-06-30"],
+  "signal_time": "16:10:00 America/New_York",
+  "resampling": false,
+  "ccm": false
+}

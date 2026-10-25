@@ -6,10 +6,16 @@ import time
 from typing import Any
 
 from .native import native_frame
+from .diagnostics import sanitized_exception
 
 
 class ProviderError(RuntimeError):
     """Sanitized provider failure; deliberately excludes upstream exception text."""
+
+    def __init__(self, message: str, safe_diagnostic: dict[str, Any] | None = None):
+        super().__init__(message)
+        self.safe_diagnostic = safe_diagnostic
+
 
 
 def interactive_factory() -> Callable[[], Any]:
@@ -62,14 +68,19 @@ class Connector:
     def query(self, sql: str, params: dict[str, Any]) -> Any:
         for attempt in range(self.attempts):
             db = None
+            provider_stage = 'CONNECT_WRDS'
             try:
                 db = self.factory()
+                provider_stage = 'EXECUTE_QUERY'
                 with db.connection.exec_driver_sql(sql, params) as result:
+                    provider_stage = 'VALIDATE_SCHEMA'
                     return native_frame(result)
             except Exception as exc:
                 if not transient(exc) or attempt + 1 == self.attempts:
-                    raise ProviderError("WRDS request failed; check local authentication, "
-                                        "entitlement, schema, and connectivity") from None
+                    detail = sanitized_exception(exc)
+                    detail['provider_stage'] = provider_stage
+                    raise ProviderError("WRDS request failed; " + detail['sanitized_exception_message'],
+                                        detail) from None
             finally:
                 if db is not None:
                     try:

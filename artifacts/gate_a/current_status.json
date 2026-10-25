@@ -65,5 +65,26 @@
       "LOW": 0,
       "report": "docs/reviews/gate_a_data_02_sgml_review.md"
     }
+  },
+  "data_02_v2": {
+    "authorization": "SIX_ADDITIONAL_PERMNOS_NO_RESAMPLING",
+    "status": "V2_PRE_EXECUTION_READY_NOT_EXECUTED",
+    "checkpoint_commit": "2a6a046",
+    "selected_permnos": null,
+    "resolution_started": false,
+    "sec_extraction_started": false,
+    "health_check": "OWNER_VERIFIED_AUTH_CRSP_WRDSSEC_PASS",
+    "frozen_permno_count": 0,
+    "live_retry_performed": false,
+    "diagnostic_report": "artifacts/gate_a/identity_spine/v2_failure_diagnosis.md",
+    "live_selection_executed": false,
+    "recovery_review": {
+      "BLOCKER": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "report": "docs/reviews/gate_a_data_02_v2_recovery_review.md"
+    },
+    "offline_preflight": "INITIAL_SELECTION_READY_NOT_EXECUTED"
   }
 }

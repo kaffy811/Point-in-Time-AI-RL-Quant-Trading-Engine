@@ -221,3 +221,57 @@ confirm identity, multiple plausible filers remain ambiguous, and unavailable ra
 sources remain PENDING_SOURCE_UNAVAILABLE after bounded backoff. Phase A remains
 frozen. No fixture-protocol-v2 execution is authorized. DATA-02 remains IN PROGRESS
 and Gate A BLOCKED. Results and offline verification: docs/gate_a_data_02_sgml.md.
+
+## DATA-02 fixture protocol V2 — OWNER AUTHORIZED, 2026-09-25
+
+Accepted A/B1/B2 checkpoint committed as 2a6a046. Latest owner decision replaces the
+former three-slot proposal with exactly six additional unique PERMNOs, frozen before
+any link/SEC outcomes, without outcome-based resampling. All six must be reported;
+only SEC_CONFIRMED issuers count. No CCM/GVKEY is authorized. The deterministic bounded
+CRSP/membership-only catalog, strata/fallback ordering and fixed observation dates are
+specified in configs/gate_a_data_02_v2.json and docs/gate_a_data_02_fixture_protocol_v2.md.
+Amended filings cannot be used as a selection criterion because SEC outcome/availability
+selection is forbidden; amendment coverage is assessed after freezing. Combined identity
+change is explicitly only a reorganization proxy, not fabricated event evidence.
+Real extraction requires the user's local WRDS authentication; pending extraction is
+not a result. Frozen resolver semantics and original outcomes remain unchanged.
+
+## V2 pre-execution block / one initial selection — 2026-09-26 owner decision
+
+Independent health checks confirm authentication/crsp/wrdssec_common access PASS.
+Do not attribute the V2 stop to auth/entitlement. Inspection found an empty raw directory
+and no selection manifest (count 0), so the state is V2_PRE_EXECUTION_BLOCKED: no sample
+or outcome has ever been observed. The missing prerequisite is the durable
+`artifacts/gate_a/identity_spine/v2_selection_manifest.json`, which freezes six PERMNOs
+and fingerprints CRSP-only selection metadata. One initial selection is authorized only
+when the raw directory is empty; nonempty unmanifested output fails closed. A future
+valid manifest is resumed exactly. No CIK-link or SEC data may be accessed before the
+freeze. Stage/error observability uses strict sanitized summaries and append-only reports.
+Config, selection algorithm, CRSP/CUSIP/CIK rules and SGML role/timestamp semantics remain
+unchanged. DATA-02 IN PROGRESS; Gate A BLOCKED.
+
+## DATA-02 V2 pre-execution recovery — 2026-10-25 owner instruction
+
+The diagnostics checkpoint and GitHub backup are owner-reported prerequisites, not
+permission to alter the research protocol. With selection manifest absent, frozen
+PERMNO count zero and observed V2 resolution outcomes zero, one initial selection
+remains authorized. The missing durable prerequisite is
+`artifacts/gate_a/identity_spine/v2_selection_manifest.json`. Its input is bounded
+CRSP-only catalog metadata from `crsp.stksecurityinfohist` and
+`crsp.dsp500list_v2`, exported with provenance through INFRA-01. No CIK-link, SEC
+accession, outcome or returns/performance input may precede freezing.
+
+Required sequence: CRSP metadata → unchanged deterministic six-PERMNO selection →
+exclusive durable JSON publication → persisted SHA-256 fingerprint → selected
+history/CIK links. A published JSON permanently freezes the identifiers even if all
+later operations fail. Retry verifies the original provenance and reuses exactly the
+same six without selecting again; missing fingerprint publication may be finished
+only from those verified original bytes. Conflicting/partial evidence fails closed.
+Existing empty raw directory: allowed. Existing target: never overwritten. Nonempty
+unmanifested raw directory: rejected. Shared INFRA-01 connection, bounded conversion,
+export and manifest/hash primitives remain the ingestion boundary.
+
+No research assumptions or resolver rules are changed. No new ambiguity requiring
+dependent implementation was identified. Full tests, Ruff, MyPy and a new independent
+review are required; live selection must not run before BLOCKER=0/HIGH=0 again.
+This recovery does not itself execute selection. Gate A remains BLOCKED.

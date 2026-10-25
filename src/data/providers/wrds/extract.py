@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 from importlib.metadata import version as package_version
 import json
+import os
 from pathlib import Path
 import re
 from typing import Any
@@ -24,6 +25,50 @@ def json_bytes(value: Any) -> bytes:
     return (json.dumps(value, sort_keys=True, indent=2, ensure_ascii=False) + "\n").encode()
 
 
+def sync_directory(path: Path) -> None:
+    """Persist directory entries before dependent provider operations are allowed."""
+    fd = os.open(path, os.O_RDONLY)
+    try:
+        os.fsync(fd)
+    finally:
+        os.close(fd)
+
+
+def sync_file(path: Path) -> None:
+    """Also finish durability on retry after an earlier interrupted sync."""
+    with path.open('rb') as handle:
+        os.fsync(handle.fileno())
+
+
+def write_once(path: Path, content: bytes) -> None:
+    """Durable exclusive publication; a partial failed write is never replaced."""
+    with path.open('xb') as handle:
+        handle.write(content)
+        handle.flush()
+        os.fsync(handle.fileno())
+    path.chmod(0o400)
+    sync_directory(path.parent)
+
+
+def bounded_table(frame: Any, max_rows: int) -> Any:
+    """Shared INFRA-01 cap check and native Arrow conversion."""
+    if len(frame) > max_rows:
+        raise ValueError('Row cap exceeded; stop without truncation/resampling')
+    return pa.Table.from_pandas(
+        frame, schema=frame.attrs.get('source_arrow_schema'), preserve_index=False, safe=True,
+    ).replace_schema_metadata(None)
+
+
+def write_parquet_once(path: Path, table: Any) -> None:
+    """Shared write-once native snapshot primitive."""
+    with path.open('xb') as handle:
+        pq.write_table(table, handle, compression='zstd')
+        handle.flush()
+        os.fsync(handle.fileno())
+    path.chmod(0o400)
+    sync_directory(path.parent)
+
+
 def extract(connector: Connector, spec: QuerySpec, version: str,
             root: Path = Path("data/raw/wrds")) -> Path:
     sql, params = spec.compile()
@@ -39,9 +84,7 @@ def extract(connector: Connector, spec: QuerySpec, version: str,
         if list(frame.columns) != list(spec.columns):
             raise ValueError("Returned columns differ from query specification")
         retrieved = datetime.now(timezone.utc).isoformat()
-        table = pa.Table.from_pandas(
-            frame, schema=frame.attrs.get("source_arrow_schema"), preserve_index=False, safe=True,
-        ).replace_schema_metadata(None)
+        table = bounded_table(frame, spec.max_rows)
         coverage = None
         if spec.date_column:
             column = table[spec.date_column]
@@ -53,7 +96,7 @@ def extract(connector: Connector, spec: QuerySpec, version: str,
                         "max": str(bounds["max"]) if bounds["max"] is not None else None,
                         "null_count": column.null_count}
         parquet = target / "part-00000.parquet"
-        pq.write_table(table, parquet, compression="zstd")
+        write_parquet_once(parquet, table)
         schema = [{"name": f.name, "type": str(f.type), "nullable": f.nullable}
                   for f in table.schema]
         manifest = {
@@ -71,10 +114,7 @@ def extract(connector: Connector, spec: QuerySpec, version: str,
             "pit_status": "RAW_ONLY_NOT_CANONICAL_OR_PIT_CERTIFIED",
         }
         # Manifest is the completion marker; consumers must reject directories without it.
-        with (target / "manifest.json").open("xb") as handle:
-            handle.write(json_bytes(manifest))
-        parquet.chmod(0o400)
-        (target / "manifest.json").chmod(0o400)
+        write_once(target / "manifest.json", json_bytes(manifest))
     except Exception:
         # Preserve failed reservation for audit; never silently reuse a partial version.
         raise
