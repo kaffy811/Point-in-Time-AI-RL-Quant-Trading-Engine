@@ -1,0 +1,31 @@
+{
+  "Gate A": "BLOCKED",
+  "exception_class": "OperationalError",
+  "existing_artifact_paths": [],
+  "frozen_permno_count": 0,
+  "frozen_selection_structure_valid": false,
+  "historical_failure_recovered": false,
+  "operation_stage": "FETCH_MEMBERSHIP",
+  "paths_successfully_written_before_failure": [],
+  "pipeline_stage": "CONNECT_WRDS",
+  "provider_stage": "CONNECT_WRDS",
+  "query_identifier": "selection_metadata",
+  "raw_directory_empty": true,
+  "raw_directory_exists": true,
+  "recorded_at": "2026-10-25T04:11:23.783949+00:00",
+  "sanitized_exception_message": "Exception message withheld by policy.",
+  "selection_already_frozen": false,
+  "source_tables": [
+    "crsp.stksecurityinfohist",
+    "crsp.dsp500list_v2"
+  ],
+  "state_at_start": {
+    "existing_artifact_paths": [],
+    "frozen_permno_count": 0,
+    "frozen_selection_structure_valid": false,
+    "raw_directory_empty": true,
+    "raw_directory_exists": true,
+    "selection_already_frozen": false
+  },
+  "status": "FAILED"
+}

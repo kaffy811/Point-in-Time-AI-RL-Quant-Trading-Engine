@@ -1,0 +1,82 @@
+{
+  "Gate A": "BLOCKED",
+  "config_sha256": "54de04446ae820d5c244d9610fe18dcafc315f392c0e7c129cc7b7b4e7cb6b2c",
+  "frozen_at": "2026-10-25T04:12:05.701887+00:00",
+  "implementation_sha256": "fcc22e12051c39cbcda0e2ff5702656e732cbe69398c319d7896554079741417",
+  "links_or_sec_outcomes_inspected_before_freeze": false,
+  "protocol": {
+    "as_of_dates": [
+      "2010-06-30",
+      "2015-06-30",
+      "2020-06-30",
+      "2025-06-30"
+    ],
+    "candidate_cap": 60,
+    "candidate_order": "NUMERIC_PERMNO_ASCENDING",
+    "ccm": false,
+    "excluded_permnos": [
+      12350,
+      13030,
+      14093,
+      78690,
+      90298
+    ],
+    "history_row_cap": 500,
+    "link_row_cap": 200,
+    "protocol": "DATA-02-V2",
+    "resampling": false,
+    "sample_size": 6,
+    "signal_time": "16:10:00 America/New_York",
+    "strata_order": [
+      "ordinary_long_lived",
+      "ticker_change",
+      "cusip_change",
+      "membership_change",
+      "combined_identity_change_proxy",
+      "amendment_check_after_freeze"
+    ],
+    "window_end": "2025-12-31",
+    "window_start": "2010-01-01"
+  },
+  "selected": [
+    {
+      "fallback": null,
+      "metadata_stratum_matched": true,
+      "permno": 10026,
+      "selection_slot": "ordinary_long_lived"
+    },
+    {
+      "fallback": null,
+      "metadata_stratum_matched": true,
+      "permno": 10028,
+      "selection_slot": "ticker_change"
+    },
+    {
+      "fallback": null,
+      "metadata_stratum_matched": true,
+      "permno": 10001,
+      "selection_slot": "cusip_change"
+    },
+    {
+      "fallback": null,
+      "metadata_stratum_matched": true,
+      "permno": 10078,
+      "selection_slot": "membership_change"
+    },
+    {
+      "fallback": null,
+      "metadata_stratum_matched": true,
+      "permno": 10100,
+      "selection_slot": "combined_identity_change_proxy"
+    },
+    {
+      "fallback": null,
+      "metadata_stratum_matched": true,
+      "permno": 10002,
+      "selection_slot": "amendment_check_after_freeze"
+    }
+  ],
+  "selection_metadata_sha256": "5460ca0a7eeac3950a93f225d135c8e64356a4bf7fdf8b6c189ee2601ab90a0b",
+  "selection_query_hash": "65d32de7f13d1d711ad41f667b0b322d0a0385d90b9ed0f3cca3f6b78db56fc2",
+  "status": "FROZEN_NO_RESAMPLING"
+}
