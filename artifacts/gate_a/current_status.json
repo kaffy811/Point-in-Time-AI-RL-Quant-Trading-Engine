@@ -19,7 +19,7 @@
   "baseline_status": "COMMITTED AND VERIFIED",
   "baseline_commit": "58805e7d49a8a871ee1cd6ec1356324013e6e092",
   "data_02_branch": "gate-a/data-02-identity-spine",
-  "data_02_status": "IN PROGRESS / B2_BOUNDED_SGML_AUDIT_COMPLETE",
+  "data_02_status": "IN PROGRESS / V2_C1_COMPLETE_C2_PENDING_USER_AGENT",
   "data_02_temporal_policy": "APPROVED_WITH_SAME_DAY_SEC_ACCEPTANCE_REFINEMENT",
   "data_02_phase_a_observations": 283,
   "data_02_ciks_requiring_sec_confirmation": [
@@ -68,16 +68,23 @@
   },
   "data_02_v2": {
     "authorization": "SIX_ADDITIONAL_PERMNOS_NO_RESAMPLING",
-    "status": "V2_PRE_EXECUTION_READY_NOT_EXECUTED",
+    "status": "FROZEN_6_WRDS_EXTRACTION_COMPLETE",
     "checkpoint_commit": "2a6a046",
-    "selected_permnos": null,
-    "resolution_started": false,
+    "selected_permnos": [
+      10026,
+      10028,
+      10001,
+      10078,
+      10100,
+      10002
+    ],
+    "resolution_started": true,
     "sec_extraction_started": false,
     "health_check": "OWNER_VERIFIED_AUTH_CRSP_WRDSSEC_PASS",
-    "frozen_permno_count": 0,
+    "frozen_permno_count": 6,
     "live_retry_performed": false,
     "diagnostic_report": "artifacts/gate_a/identity_spine/v2_failure_diagnosis.md",
-    "live_selection_executed": false,
+    "live_selection_executed": true,
     "recovery_review": {
       "BLOCKER": 0,
       "HIGH": 0,
@@ -85,6 +92,34 @@
       "LOW": 0,
       "report": "docs/reviews/gate_a_data_02_v2_recovery_review.md"
     },
-    "offline_preflight": "INITIAL_SELECTION_READY_NOT_EXECUTED"
+    "selection_state": "FROZEN_6",
+    "cik_link_extraction": "COMPLETE",
+    "resampling": "PROHIBITED",
+    "selection_commit": "3c9d827fa4c78bbad7b0427a373830349a515921",
+    "selection_manifest_sha256": "c353f73c16d4fcd0a890cde5def3ee26cc13a85475689a578179b01f5c791eb3",
+    "links_or_sec_outcomes_inspected_before_freeze": false,
+    "resolution_status": "C1_COMPLETE_C2_NOT_STARTED_MISSING_SEC_USER_AGENT",
+    "c1_manifest": "artifacts/gate_a/identity_spine/v2_resolution/c1_manifest.json",
+    "c1_observation_count": 24,
+    "c1_status_counts": {
+      "RESOLVED_PENDING_SEC_CONFIRMATION": 8,
+      "AMBIGUOUS": 0,
+      "UNRESOLVED": 16
+    },
+    "c1_eligible_sec_ciks": [
+      "0000043350",
+      "0000701719",
+      "0000785956"
+    ],
+    "c2_status": "NOT_STARTED_MISSING_GENUINE_SEC_USER_AGENT",
+    "c2_final_counts": null,
+    "resolution_review": {
+      "BLOCKER": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "report": "docs/reviews/gate_a_data_02_v2_resolution_review.md",
+      "scope": "IMPLEMENTATION_READINESS_NOT_C2_EVIDENCE_ACCEPTANCE"
+    }
   }
 }

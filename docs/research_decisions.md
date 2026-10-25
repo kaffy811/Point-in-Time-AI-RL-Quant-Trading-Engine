@@ -275,3 +275,34 @@ No research assumptions or resolver rules are changed. No new ambiguity requirin
 dependent implementation was identified. Full tests, Ruff, MyPy and a new independent
 review are required; live selection must not run before BLOCKER=0/HIGH=0 again.
 This recovery does not itself execute selection. Gate A remains BLOCKED.
+
+## DATA-02 V2 frozen-cohort resolution — OWNER AUTHORIZED, 2026-10-25
+
+The owner confirms successful live selection and COMPLETE WRDS extraction. The exact
+ordered cohort is permanently frozen: **10026, 10028, 10001, 10078, 10100, 10002**.
+No deletion, regeneration, reordering, substitution or replacement is authorized.
+Authoritative selection JSON and fingerprint are committed/pushed as
+`3c9d827fa4c78bbad7b0427a373830349a515921`, SHA-256
+`c353f73c16d4fcd0a890cde5def3ee26cc13a85475689a578179b01f5c791eb3`.
+This supersedes all earlier initial-selection authorization and pre-execution states.
+
+C1 applies the unchanged Phase A resolver to the existing predeclared four as-of
+dates for all six securities, retaining missing-history and unsuccessful cases.
+C2 is authorized only for unique historically eligible C1 candidates, using the
+already specified bounded root-submissions and frozen accession-roster protocol.
+No historical shard expansion, original-provider allowlist widening, tmatch ranking,
+weaker validation, timestamp-policy change or SUBJECT confirmation is authorized.
+The two original confirmed issuer CIKs are unioned with V2 CIKs to avoid double count.
+Below five after actual C2 evidence: stop, retain the negative result, no resampling
+or automatic CCM/GVKEY. At least five meets only the issuer-count requirement.
+
+The design limitation is explicit: this is a precommitted deterministic
+semantic-validation cohort, not a representative random sample. PERMNO 10002 remains
+the amendment slot even without eligible CIK/amendment evidence; checking amendments
+after freeze may describe availability, never alter selection.
+
+C1 completed with 24 real observations: 8 pending SEC, 16 unresolved, zero ambiguous.
+All six future/order invariance checks pass 24/24. Three unique CIKs qualify for the
+immutable SEC request roster. C2 currently requires a genuine local SEC_USER_AGENT;
+missing contact configuration is not an observed SEC source failure or negative result.
+Details: `gate_a_data_02_v2_resolution.md`. DATA-02 IN PROGRESS; Gate A BLOCKED.

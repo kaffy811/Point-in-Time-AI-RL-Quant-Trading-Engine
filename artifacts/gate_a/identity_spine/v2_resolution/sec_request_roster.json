@@ -1,0 +1,89 @@
+{
+  "authorized_ciks": [
+    "0000043350",
+    "0000701719",
+    "0000785956"
+  ],
+  "c1_results_sha256": "d165603be20025a83b484ca87d988b276943896d80c07a7511b45edf2a55d2d6",
+  "headers_per_cik": 3,
+  "historical_shard_expansion": false,
+  "observations": [
+    {
+      "as_of_date": "2010-06-30",
+      "as_of_timestamp": "2010-06-30T16:10:00-04:00",
+      "cik": "0000785956",
+      "first_evidence_date": "1996-06-06",
+      "same_day": false,
+      "security_id": 10026
+    },
+    {
+      "as_of_date": "2015-06-30",
+      "as_of_timestamp": "2015-06-30T16:10:00-04:00",
+      "cik": "0000785956",
+      "first_evidence_date": "1996-06-06",
+      "same_day": false,
+      "security_id": 10026
+    },
+    {
+      "as_of_date": "2020-06-30",
+      "as_of_timestamp": "2020-06-30T16:10:00-04:00",
+      "cik": "0000785956",
+      "first_evidence_date": "1996-06-06",
+      "same_day": false,
+      "security_id": 10026
+    },
+    {
+      "as_of_date": "2025-06-30",
+      "as_of_timestamp": "2025-06-30T16:10:00-04:00",
+      "cik": "0000785956",
+      "first_evidence_date": "1996-06-06",
+      "same_day": false,
+      "security_id": 10026
+    },
+    {
+      "as_of_date": "2010-06-30",
+      "as_of_timestamp": "2010-06-30T16:10:00-04:00",
+      "cik": "0000701719",
+      "first_evidence_date": "2004-09-16",
+      "same_day": false,
+      "security_id": 10028
+    },
+    {
+      "as_of_date": "2015-06-30",
+      "as_of_timestamp": "2015-06-30T16:10:00-04:00",
+      "cik": "0000701719",
+      "first_evidence_date": "2004-09-16",
+      "same_day": false,
+      "security_id": 10028
+    },
+    {
+      "as_of_date": "2010-06-30",
+      "as_of_timestamp": "2010-06-30T16:10:00-04:00",
+      "cik": "0000043350",
+      "first_evidence_date": "2010-01-15",
+      "same_day": false,
+      "security_id": 10001
+    },
+    {
+      "as_of_date": "2015-06-30",
+      "as_of_timestamp": "2015-06-30T16:10:00-04:00",
+      "cik": "0000043350",
+      "first_evidence_date": "2010-07-28",
+      "same_day": false,
+      "security_id": 10001
+    }
+  ],
+  "permnos": [
+    10026,
+    10028,
+    10001,
+    10078,
+    10100,
+    10002
+  ],
+  "phase": "V2_C2_REQUEST_ROSTER",
+  "resampling": false,
+  "selection_commit": "3c9d827fa4c78bbad7b0427a373830349a515921",
+  "selection_manifest_sha256": "c353f73c16d4fcd0a890cde5def3ee26cc13a85475689a578179b01f5c791eb3",
+  "submissions_per_cik": 1
+}

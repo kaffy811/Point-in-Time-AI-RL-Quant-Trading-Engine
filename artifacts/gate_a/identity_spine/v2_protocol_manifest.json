@@ -1,15 +1,20 @@
 {
   "protocol": "DATA-02-V2",
-  "status": "V2_PRE_EXECUTION_READY_NOT_EXECUTED",
+  "status": "FROZEN_6_WRDS_EXTRACTION_COMPLETE",
   "checkpoint_commit": "2a6a046",
   "config_sha256": "54de04446ae820d5c244d9610fe18dcafc315f392c0e7c129cc7b7b4e7cb6b2c",
   "provider_implementation_sha256": "fcc22e12051c39cbcda0e2ff5702656e732cbe69398c319d7896554079741417",
-  "selected_permnos": null,
-  "missing_prerequisite": "artifacts/gate_a/identity_spine/v2_selection_manifest.json",
-  "missing_prerequisite_role": "durable six-PERMNO selection evidence",
-  "initial_selection_authorized_if_raw_directory_empty": true,
+  "selected_permnos": [
+    10026,
+    10028,
+    10001,
+    10078,
+    10100,
+    10002
+  ],
+  "initial_selection_authorized_if_raw_directory_empty": false,
   "selection_manifest_expected": "artifacts/gate_a/identity_spine/v2_selection_manifest.json",
-  "resolution_started": false,
+  "resolution_started": true,
   "sec_extraction_started": false,
   "Gate A": "BLOCKED",
   "selection_input_artifacts": [
@@ -17,7 +22,13 @@
     "data/raw/wrds/gate_a/data_02_v2/selection_metadata.manifest.json"
   ],
   "selection_fingerprint_expected": "artifacts/gate_a/identity_spine/v2_selection_manifest.sha256",
-  "frozen_permno_count": 0,
-  "live_selection_executed": false,
-  "recovery_review": "docs/reviews/gate_a_data_02_v2_recovery_review.md"
+  "frozen_permno_count": 6,
+  "live_selection_executed": true,
+  "recovery_review": "docs/reviews/gate_a_data_02_v2_recovery_review.md",
+  "selection_state": "FROZEN_6",
+  "cik_link_extraction": "COMPLETE",
+  "resampling": "PROHIBITED",
+  "selection_commit": "3c9d827fa4c78bbad7b0427a373830349a515921",
+  "selection_manifest_sha256": "c353f73c16d4fcd0a890cde5def3ee26cc13a85475689a578179b01f5c791eb3",
+  "links_or_sec_outcomes_inspected_before_freeze": false
 }

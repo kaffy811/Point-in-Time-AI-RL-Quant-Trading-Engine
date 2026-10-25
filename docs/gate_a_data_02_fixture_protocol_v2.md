@@ -147,3 +147,19 @@ must not start before the new independent review has BLOCKER=0 and HIGH=0. Earli
 review counts do not certify this revision. See
 `reviews/gate_a_data_02_v2_recovery_review.md` for the new disposition. Passing code
 checks does not provide real category evidence, DATA-02 acceptance or Gate A PASS.
+
+## Executed freeze and authorized resolution — 2026-10-25
+
+The owner completed the live freeze/extraction. The exact ordered six are now
+10026, 10028, 10001, 10078, 10100, 10002; **no initial selection authorization remains**.
+Freeze JSON/fingerprint and diagnostics are committed/pushed as `3c9d827`.
+Selection is FROZEN_6, CIK-link extraction COMPLETE, resampling PROHIBITED. The JSON
+still records links_or_sec_outcomes_inspected_before_freeze=false and
+FROZEN_NO_RESAMPLING; its bytes must never be rewritten.
+
+The owner's C1/C2 authorization retains this protocol's four fixed as-of dates and
+SEC bounds. C1 is complete; C2 is pending a genuine contact User-Agent. See
+`gate_a_data_02_v2_resolution.md` for all 24 outcomes and pending evidence limits.
+This is a precommitted deterministic semantic-validation cohort, not a
+representative random sample. The amendment slot 10002 remains even when evidence
+cannot be assessed. DATA-02 remains IN PROGRESS and Gate A BLOCKED.

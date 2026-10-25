@@ -1,0 +1,74 @@
+{
+  "DATA-02": "IN PROGRESS",
+  "Gate A": "BLOCKED",
+  "cik_link_extraction": "COMPLETE",
+  "config_sha256": "e58e80cda28eac52b7173cd2cf51bdce91a0a18155c08274ff1e8143c0c630a4",
+  "eligible_sec_ciks": [
+    "0000043350",
+    "0000701719",
+    "0000785956"
+  ],
+  "eligible_sec_observations": 8,
+  "future_invariance": {
+    "append_future_records": {
+      "passed": 24,
+      "total": 24
+    },
+    "mutate_future_payloads": {
+      "passed": 24,
+      "total": 24
+    },
+    "remove_future_records": {
+      "passed": 24,
+      "total": 24
+    },
+    "remove_last_date_and_tmatch": {
+      "passed": 24,
+      "total": 24
+    },
+    "repeat": {
+      "passed": 24,
+      "total": 24
+    },
+    "reverse_input_order": {
+      "passed": 24,
+      "total": 24
+    }
+  },
+  "implementation_sha256": "4b387498a7e0f7537bc6f036431b76e4d8692789f5833f2171fc666875fced6e",
+  "input_source_hashes": {
+    "selection_metadata": "5460ca0a7eeac3950a93f225d135c8e64356a4bf7fdf8b6c189ee2601ab90a0b",
+    "stksecurityinfohist_fixture": "5161c2a17868ad15db7da6e7337b761814e581ba0d0c152660d5996a171f5192",
+    "wciklink_cusip_fixture": "f62041cf5f95d532f9c8f987380fe281a5b9e8ee6da0d2174e9e50c7878d9e05"
+  },
+  "licensed_output_sha256": "d165603be20025a83b484ca87d988b276943896d80c07a7511b45edf2a55d2d6",
+  "nonvacuous_future_history_observations": 18,
+  "nonvacuous_future_link_observations": 6,
+  "observation_count": 24,
+  "permnos": [
+    10026,
+    10028,
+    10001,
+    10078,
+    10100,
+    10002
+  ],
+  "phase": "V2_C1",
+  "phase_a_resolver_sha256": "1802471a08b06ab82725557fc43121b115906f37c35f432bddfdf6fae25e467b",
+  "reason_counts": {
+    "NO_HISTORICALLY_ELIGIBLE_STRONG_LINK": 4,
+    "NO_HISTORICAL_SECURITY_RECORD": 12,
+    "UNIQUE_HISTORICALLY_EVIDENCED_CIK": 8
+  },
+  "resampling": "PROHIBITED",
+  "sampling_description": "precommitted deterministic semantic-validation cohort",
+  "sec_request_roster_sha256": "fb729283727f1955c2ec93f4b238ae3484256b0e66e003f57bbb8a50372c0071",
+  "selection_commit": "3c9d827fa4c78bbad7b0427a373830349a515921",
+  "selection_manifest_sha256": "c353f73c16d4fcd0a890cde5def3ee26cc13a85475689a578179b01f5c791eb3",
+  "selection_state": "FROZEN_6",
+  "status_counts": {
+    "RESOLVED_PENDING_SEC_CONFIRMATION": 8,
+    "UNRESOLVED": 16
+  },
+  "wrds_completion_manifest_sha256": "2baf7725dd4706ad7e44d448d4db38af4066e63421f2bdeee5b87f4c45a343b6"
+}

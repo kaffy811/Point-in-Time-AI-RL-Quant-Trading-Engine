@@ -1,9 +1,7 @@
 """Write-once, bounded native Parquet snapshots with completion manifests."""
 from dataclasses import asdict
 from datetime import datetime, timezone
-import hashlib
 from importlib.metadata import version as package_version
-import json
 import os
 from pathlib import Path
 import re
@@ -15,39 +13,10 @@ import pyarrow.parquet as pq  # type: ignore[import-untyped]
 
 from .connection import Connector
 from .query import QuerySpec
-
-
-def digest(value: bytes) -> str:
-    return hashlib.sha256(value).hexdigest()
-
-
-def json_bytes(value: Any) -> bytes:
-    return (json.dumps(value, sort_keys=True, indent=2, ensure_ascii=False) + "\n").encode()
-
-
-def sync_directory(path: Path) -> None:
-    """Persist directory entries before dependent provider operations are allowed."""
-    fd = os.open(path, os.O_RDONLY)
-    try:
-        os.fsync(fd)
-    finally:
-        os.close(fd)
-
-
-def sync_file(path: Path) -> None:
-    """Also finish durability on retry after an earlier interrupted sync."""
-    with path.open('rb') as handle:
-        os.fsync(handle.fileno())
-
-
-def write_once(path: Path, content: bytes) -> None:
-    """Durable exclusive publication; a partial failed write is never replaced."""
-    with path.open('xb') as handle:
-        handle.write(content)
-        handle.flush()
-        os.fsync(handle.fileno())
-    path.chmod(0o400)
-    sync_directory(path.parent)
+from ....utils.artifacts import (
+    digest as digest, json_bytes as json_bytes, sync_directory as sync_directory,
+    sync_file as sync_file, write_once as write_once,
+)
 
 
 def bounded_table(frame: Any, max_rows: int) -> Any:
